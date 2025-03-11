@@ -8,15 +8,18 @@ import { RootState } from "../redux/store";
 
 function Menu() {
   const menu = useSelector((state: RootState) => state.music.menu);
-  return (
+  return <>
+    <div className={ menu?' w-[200px] h-[calc(100vh-54px)]':'w-[70px] h-[calc(100vh-54px)]' }>
+
+    </div>
     <div
       className={
         menu
-          ? "bg-stone-950  text-stone-50 h-[calc(100vh-54px)] w-[200px] py-[20px]"
-          : "bg-stone-950  text-stone-50 h-[calc(100vh-54px)] w-[70px] py-[20px]"
+          ? " text-stone-50 h-[calc(100vh)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0"
+          : " text-stone-50 h-[calc(100vh-54px)] w-[70px] py-[10px]  flex flex-col items-center fixed left-0 bottom-0 "
       }
     >
-      <nav className="flex flex-col w-[100%]  justify-center px-[10px]">
+      <nav className={ menu&&" border-b-[1px] border-gray-500" +"flex flex-col w-[95%]  justify-center px-[10px] py-[20px]" }>
         <Link
           className="flex items-center w-100% bg-stone-300 rounded-[10px] p-[5px] my-[5px]"
           to={"/"}
@@ -41,7 +44,7 @@ function Menu() {
         </Link>
       </nav>
     </div>
-  );
+    </>;
 }
 
 export default Menu;

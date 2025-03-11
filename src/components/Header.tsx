@@ -6,13 +6,13 @@ import { setmenu } from "../redux/Slice";
 function Header() {
   const dispatch = useDispatch();
   return (
-    <header className="bg-stone-950 flex flex-row justify-between items-center p-[10px] ">
-      <AiOutlineMenu
+    <header className="bg-stone-950 flex flex-row justify-between items-center p-[10px]  ">
+      <div className="flex text-[20px] z-10"><AiOutlineMenu
         onClick={() => {
           dispatch(setmenu());
         }}
         className="text-white  text-[30px] hover:text-[#5c5c5c]"
-      />
+      /> <p className="text-white ml-[20px]">Shah</p><p className="text-yellow-300">Music</p></div>
       <input
         type="text"
         placeholder="Search"
