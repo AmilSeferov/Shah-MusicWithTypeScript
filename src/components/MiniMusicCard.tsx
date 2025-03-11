@@ -3,7 +3,7 @@ import { SlOptionsVertical } from "react-icons/sl";
 
 function MiniMusicCard() {
   return (
-    <div className="w-[340px] flex flex-row group relative ">
+    <div className="w-[340px] flex flex-row group relative m-[10px] ">
       <img
         className="w-[48px]"
         src="https://lh3.googleusercontent.com/UUqDsBXvVRbZt0sjx7D7zqTuXSOZFP4PeZoO-QGerNUZFqdkDJ5P77p_g2j_GYiXiYsKb8iHrPTxDYH4=w544-h544-l90-rj"
