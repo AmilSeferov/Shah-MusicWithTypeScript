@@ -7,12 +7,16 @@ function Header() {
   const dispatch = useDispatch();
   return (
     <header className="bg-stone-950 flex flex-row justify-between items-center p-[10px]  ">
-      <div className="flex text-[20px] z-10"><AiOutlineMenu
+      <div
+        className="flex text-[20px] z-10"
         onClick={() => {
           dispatch(setmenu());
         }}
-        className="text-white  text-[30px] hover:text-[#5c5c5c]"
-      /> <p className="text-white ml-[20px]">Shah</p><p className="text-yellow-300">Music</p></div>
+      >
+        <AiOutlineMenu className={"text-white  text-[30px] hover:text-[#5c5c5c]"} />
+        <p className="text-white ml-[20px]">Shah</p>
+        <p className="text-yellow-300">Music</p>
+      </div>
       <input
         type="text"
         placeholder="Search"
