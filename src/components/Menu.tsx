@@ -9,7 +9,7 @@ import { RootState } from "../redux/store";
 function Menu() {
   const menu = useSelector((state: RootState) => state.music.menu);
   return <>
-    <div className={ menu?' w-[200px] h-[calc(100vh-54px)]':'w-[70px] h-[calc(100vh-54px)]' }>
+    <div className={ menu?' w-[200px] h-[calc(100vh-54px)]':'w-[70px] h-[calc(100vh-54px)] ' }>
 
     </div>
     <div

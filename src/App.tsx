@@ -15,7 +15,7 @@ function App() {
       <main className='flex flex-row bg-stone-950'>
         <Menu/>
         
-      <Routes>
+      <Routes >
         <Route path='/' element={<Home/>}> </Route>
       </Routes>
     </main>
