@@ -9,14 +9,14 @@ import { RootState } from "../redux/store";
 function Menu() {
   const menu = useSelector((state: RootState) => state.music.menu);
   return <>
-    <div className={ menu?' w-[200px] h-[calc(100vh-54px)]':'w-[70px] h-[calc(100vh-54px)] ' }>
+    <div className={ menu?' w-[200px] h-[calc(100vh-80px)]':'w-[70px] h-[calc(100vh-80px)] ' }>
 
     </div>
     <div
       className={
         menu
           ? " text-stone-50 h-[calc(100vh)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0"
-          : " text-stone-50 h-[calc(100vh-54px)] w-[70px] py-[10px]  flex flex-col items-center fixed left-0 bottom-0 "
+          : " text-stone-50 h-[calc(100vh-80px)] w-[70px] py-[10px]  flex flex-col items-center fixed left-0 bottom-0 "
       }
     >
       <nav className={ (menu?" border-b-[1px] border-gray-500":'') +"flex flex-col w-[95%]  justify-center px-[10px] py-[20px]" }>
@@ -29,7 +29,7 @@ function Menu() {
         </Link>
         <Link
           className="flex items-center w-100% rounded-[10px] p-[5px] hover:bg-stone-200  my-[5px]"
-          to={"/Discovery"}
+          to={"/Discover"}
         >
           <RiCompassDiscoverFill className="text-[20px] mx-[10px]" />
           {menu && "Discover"}

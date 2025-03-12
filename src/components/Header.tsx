@@ -6,7 +6,7 @@ import { setmenu } from "../redux/Slice";
 function Header() {
   const dispatch = useDispatch();
   return (
-    <header className="bg-stone-950 flex flex-row justify-between items-center p-[10px]  ">
+    <header className="bg-stone-950 flex flex-row justify-between items-center p-[20px]  ">
       <div
         className="flex text-[20px] z-10"
         onClick={() => {
@@ -20,7 +20,7 @@ function Header() {
       <input
         type="text"
         placeholder="Search"
-        className="bg-[#5c5c5c]  text-stone-100 outline-none border-none py-[5px] px-[10px] w-[300px] rounded-[11px]"
+        className="bg-[#5c5c5c]  text-stone-100 outline-none border-none py-[8px] px-[10px] w-[350px] rounded-[11px]"
       />
       <FaUserCircle className="text-[32px] text-[#5c5c5c] bg-white rounded-[50%] " />
     </header>
