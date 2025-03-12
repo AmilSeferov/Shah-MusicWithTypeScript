@@ -8,7 +8,9 @@ const initialState:stateType = {
   isLoading:false,
   error:false,
   data:[],
-  menu:true
+  menu:true,
+  addPlayList:true
+
 }
 
 export const counterSlice = createSlice({
@@ -17,12 +19,15 @@ export const counterSlice = createSlice({
   reducers: {
     setmenu:(state)=>{
      state.menu=!state.menu
+    },
+    setAddList:(state)=>{
+ state.addPlayList=!state.addPlayList
     }
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {setmenu,  } = counterSlice.actions
+export const {setmenu, setAddList } = counterSlice.actions
 
 export default counterSlice.reducer

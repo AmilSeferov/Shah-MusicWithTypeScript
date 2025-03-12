@@ -3,11 +3,16 @@ import { GiWorld } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { CiLock } from "react-icons/ci";
 import { AiOutlineDisconnect } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { setAddList } from "../redux/Slice";
 function PlayListForm() {
   const [ref, setref] = useState<boolean[]>([false, false, false]);
   const [select, setselect] = useState<boolean>(true);
+  const aps=useSelector((state:RootState)=>state.music.addPlayList)
+  const dispatch = useDispatch();
   return (
-    <div className="w-[640px] h-[400px] p-[25px] bg-stone-900 fixed top-[calc(50%-160px)] left-[calc(50%-200px)] z-9  font-bold flex flex-col justify-between">
+    <div className={(aps?'flex':'hidden') + " w-[640px] h-[400px] p-[25px] bg-stone-900 fixed top-[calc(50%-160px)] left-[calc(50%-200px)] z-9  font-bold  flex-col justify-between"}>
       <h2>New PlayList</h2>
       <div>
         <input
@@ -71,7 +76,12 @@ function PlayListForm() {
               " absolute bottom-[-190px] bg-stone-800 py-[5px] "
             }
           >
-            <li className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500">
+            <li
+              onClick={() => {
+                setselect(!select);
+              }}
+              className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
+            >
               <GiWorld className="text-[20px] mr-[15px] " />
               <div>
                 <p> Herkese acik</p>
@@ -80,7 +90,12 @@ function PlayListForm() {
                 </p>
               </div>
             </li>
-            <li className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500">
+            <li
+              onClick={() => {
+                setselect(!select);
+              }}
+              className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
+            >
               <AiOutlineDisconnect className="text-[20px] mr-[15px] " />
               <div>
                 <p> Liste dışı</p>
@@ -89,7 +104,12 @@ function PlayListForm() {
                 </p>
               </div>
             </li>
-            <li className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500">
+            <li
+              onClick={() => {
+                setselect(!select);
+              }}
+              className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
+            >
               <CiLock className="text-[20px] mr-[15px] " />
               <div>
                 <p> Gizli</p>
@@ -109,7 +129,11 @@ function PlayListForm() {
         ></div>
       </div>
       <div className="flex flex-row justify-end   w-[100%]">
-        <button>Iptal</button>
+        <button 
+        onClick={() => {
+                    dispatch(setAddList());
+                  }}
+        >Iptal</button>
         <button className="bg-stone-400 w-[100px] h-[30px] rounded-[20px] ml-[20px]">
           Olusdur
         </button>
