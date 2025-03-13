@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MiniPlayerElement from "../components/MiniPlayerElement";
 function PlayerPage() {
   const [active, setActive] = useState<number>(1);
 
@@ -48,8 +49,8 @@ function PlayerPage() {
               Benzer
             </li>
           </ul>
-          <div>
-
+          <div className="h-[100%] border-[1px] ">
+            <MiniPlayerElement/>
           </div>
         </div>
       </div>
