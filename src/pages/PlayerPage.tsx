@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MiniPlayerElement from "../components/MiniPlayerElement";
 import AutoPlay from "../components/AutoPlay";
+import PlayerList from "../components/PlayerList";
 function PlayerPage() {
   const [active, setActive] = useState<number>(1);
 
@@ -50,9 +51,10 @@ function PlayerPage() {
               Benzer
             </li>
           </ul>
-          <div className="h-[100%] border-[1px] ">
-            <AutoPlay/>
-            <MiniPlayerElement/>
+          <div className="h-[100%]  mb-[10px]">
+           {active===1 && <PlayerList/>}
+           {active===2 && <p className=''>aamkm</p>}
+           {active===3 && ''}
           </div>
         </div>
       </div>
