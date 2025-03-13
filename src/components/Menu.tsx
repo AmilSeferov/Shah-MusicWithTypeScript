@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { FiPlus } from "react-icons/fi";
 import { setAddList } from "../redux/Slice";
+import MenuListElement from "./MenuListElement";
 
 function Menu() {
   const dispatch = useDispatch();
@@ -34,21 +35,21 @@ function Menu() {
           }
         >
           <Link
-            className="flex items-center w-100% bg-stone-800 rounded-[10px] p-[5px] my-[5px]"
+            className="flex items-center h-[40px] w-100% bg-stone-800 rounded-[10px] p-[5px] my-[5px]"
             to={"/"}
           >
             <GoHomeFill className="text-[20px] mx-[10px]" />
             {menu && "Home"}
           </Link>
           <Link
-            className="flex items-center w-100% rounded-[10px] p-[5px] hover:bg-stone-700  my-[5px]"
+            className="flex items-center h-[40px] w-100% rounded-[10px] p-[5px] hover:bg-stone-700  my-[5px]"
             to={"/Discover"}
           >
             <RiCompassDiscoverFill className="text-[20px] mx-[10px]" />
             {menu && "Discover"}
           </Link>
           <Link
-            className=" flex items-center w-100% rounded-[10px] p-[5px]  hover:bg-stone-700 my-[5px]"
+            className=" flex items-center h-[40px] w-100% rounded-[10px] p-[5px]  hover:bg-stone-700 my-[5px]"
             to={"/About"}
           >
             {" "}
@@ -64,6 +65,11 @@ function Menu() {
         >
           <FiPlus className="mx-[10px]" /> New playlist
         </button>
+        <div className=" flex flex-col w-[95%]  justify-center px-[10px] py-[20px]">
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+        </div>
       </div>
     </>
   );
