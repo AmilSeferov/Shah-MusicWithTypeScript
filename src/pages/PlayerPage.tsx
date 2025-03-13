@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MiniPlayerElement from "../components/MiniPlayerElement";
+import AutoPlay from "../components/AutoPlay";
 function PlayerPage() {
   const [active, setActive] = useState<number>(1);
 
@@ -50,6 +51,7 @@ function PlayerPage() {
             </li>
           </ul>
           <div className="h-[100%] border-[1px] ">
+            <AutoPlay/>
             <MiniPlayerElement/>
           </div>
         </div>
