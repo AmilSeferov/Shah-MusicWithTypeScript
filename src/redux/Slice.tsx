@@ -9,7 +9,7 @@ const initialState:stateType = {
   error:false,
   data:[],
   menu:true,
-  addPlayList:true
+  addPlayList:false
 
 }
 
