@@ -16,7 +16,7 @@ function Menu() {
       <div
         className={
           menu
-            ? " w-[200px] h-[calc(100vh-80px)]"
+            ? " w-[250px] h-[calc(100vh-80px)]"
             : "w-[70px] h-[calc(100vh-80px)] "
         }
       ></div>
