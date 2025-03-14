@@ -14,8 +14,10 @@ import { LuRepeat1 } from "react-icons/lu";
 import { IoShuffle } from "react-icons/io5";
 import { MdExpandLess } from "react-icons/md";
 import { MdExpandMore } from "react-icons/md";
+import { useState } from "react";
 
 function Player() {
+  const [value,setValue]=useState<number[]>([0,0])
   return (
     <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
       <div className="flex items-center w-[320px] text-[24px]">
@@ -39,10 +41,18 @@ function Player() {
         <SlOptionsVertical className="text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
       </div>
       <div className="flex justify-end items-center w-[320px] text-[24px]">
-        <IoVolumeHighOutline className="mx-[10px]"/>
-        <LuRepeat className="mx-[10px]"/>
-        <IoShuffle className="mx-[10px]"/>
-        <MdExpandMore className="mx-[10px]"/>
+        <div className="flex group items-center">
+        <div
+          onClick={(e) => {
+            console.log(e.clientX);
+          }}
+          className="hidden w-[70px] h-[3px] bg-stone-300 group-hover:flex"
+        ></div>
+        <IoVolumeHighOutline className="mx-[10px]" />
+        </div>
+       { value[0]===0&&<LuRepeat className="mx-[10px]" /> }
+        <IoShuffle className="mx-[10px]" />
+        <MdExpandMore className="mx-[10px]" />
       </div>
     </div>
   );
