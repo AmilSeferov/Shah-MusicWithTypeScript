@@ -24,9 +24,9 @@ function Player() {
           <p>Ela</p>
           <p>Reynmen • Ela • 2019</p>
         </div>
-        <BiDislike className="text-[23px]  mx-[10px]" />{" "}
-        <BiLike className="text-[23px] mx-[10px]" />{" "}
-        <SlOptionsVertical className="text-[18px] mx-[10px]" />
+        <BiDislike className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
+        <BiLike className="text-[29px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
+        <SlOptionsVertical className="text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
       </div>
       <div className="flex items-center w-[320px] text-[24px]"></div>
     </div>
