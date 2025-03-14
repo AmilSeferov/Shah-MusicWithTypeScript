@@ -6,10 +6,10 @@ function PlayerPage() {
   const [active, setActive] = useState<number>(1);
 
   return (
-    <div className="h-[100%] w-[100%]  flex flew-row justify-between mt-[50px]">
+    <div className="h-[calc(100vh-140px)] w-[100%]  flex flew-row justify-between mt-[50px]">
       <div className="w-[50%] flex justify-center ">
         <img
-          className="max-h-[100%] "
+          className="max-h-[calc(100vh-180px)] "
           src="https://lh3.googleusercontent.com/VXBgP6Qqigmd89iW-5RnR8CPcotv1vtihE4y45glVfxFt5VQX6B_mTfTuptcONOGwvJPmQJFTF8uKOU=w544-h544-l90-rj"
           alt=""
         />
@@ -51,7 +51,7 @@ function PlayerPage() {
               Benzer
             </li>
           </ul>
-          <div className="h-[100%]  mb-[10px]">
+          <div className="h-[calc(100vh-280px)]  mb-[10px]">
            {active===1 && <PlayerList/>}
            {active===2 && <p className=''>aamkm</p>}
            {active===3 && ''}

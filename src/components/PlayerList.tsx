@@ -4,9 +4,31 @@ import AutoPlay from './AutoPlay'
 
 function PlayerList() {
   return (
-    <div>
+    <div className='h-[100%]'>
        <AutoPlay/>
-       <div>
+       <div className='overflow-auto h-[100%]'>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
+       <MiniPlayerElement/>
        <MiniPlayerElement/>
        <MiniPlayerElement/>
        <MiniPlayerElement/>
