@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import Discover from './pages/Discover'
 import PlayListForm from './components/PlayListForm'
 import PlayerPage from './pages/PlayerPage'
+import Player from './components/Player'
 function App() {
   const menu=useSelector((state:RootState)=>state.music.menu)
 
@@ -25,7 +26,7 @@ function App() {
 
       </Routes> */}
     </main>
-      
+    <Player/>
     </>
   )
 }

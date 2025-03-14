@@ -1,9 +1,4 @@
-import React from 'react'
-import MusicCard from '../components/MusicCard'
-import MusicList from '../components/MusicList'
-import MiniMusicCard from '../components/MiniMusicCard'
-import MiniMusicList from '../components/MiniMusicList'
-import PlayerPage from './PlayerPage'
+
 
 function Home() {
 
