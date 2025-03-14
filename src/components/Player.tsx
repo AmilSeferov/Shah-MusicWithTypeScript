@@ -4,10 +4,20 @@ import { IoPlaySkipForward } from "react-icons/io5";
 import { BiDislike } from "react-icons/bi";
 import { BiLike } from "react-icons/bi";
 import { SlOptionsVertical } from "react-icons/sl";
+import { IoVolumeLowOutline } from "react-icons/io5";
+import { IoVolumeMediumOutline } from "react-icons/io5";
+import { IoVolumeHighOutline } from "react-icons/io5";
+import { IoVolumeMuteOutline } from "react-icons/io5";
+import { BsVolumeMute } from "react-icons/bs";
+import { LuRepeat } from "react-icons/lu";
+import { LuRepeat1 } from "react-icons/lu";
+import { IoShuffle } from "react-icons/io5";
+import { MdExpandLess } from "react-icons/md";
+import { MdExpandMore } from "react-icons/md";
 
 function Player() {
   return (
-    <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[20px] bg-stone-800 px-[10px] text-stone-200">
+    <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
       <div className="flex items-center w-[320px] text-[24px]">
         <IoPlaySkipBackSharp />
         <IoIosPlay className="text-[34px] mx-[10px]" />
@@ -28,7 +38,12 @@ function Player() {
         <BiLike className="text-[29px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
         <SlOptionsVertical className="text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
       </div>
-      <div className="flex items-center w-[320px] text-[24px]"></div>
+      <div className="flex justify-end items-center w-[320px] text-[24px]">
+        <IoVolumeHighOutline className="mx-[10px]"/>
+        <LuRepeat className="mx-[10px]"/>
+        <IoShuffle className="mx-[10px]"/>
+        <MdExpandMore className="mx-[10px]"/>
+      </div>
     </div>
   );
 }
