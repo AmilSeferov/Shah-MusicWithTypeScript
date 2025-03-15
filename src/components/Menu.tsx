@@ -17,15 +17,15 @@ function Menu() {
       <div
         className={
           menu
-            ? " w-[250px] h-[calc(100vh-80px)]"
-            : "w-[70px] h-[calc(100vh-80px)] "
+            ? " w-[250px] h-[calc(100%-80px)]"
+            : "w-[70px] h-[calc(100%-80px)] "
         }
       ></div>
       <div
         className={
           menu
-            ? " text-stone-50 h-[calc(100vh)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0"
-            : " text-stone-50 h-[calc(100vh-80px)] w-[70px] py-[10px]  flex flex-col items-center fixed left-0 bottom-0 "
+            ? " text-stone-50 h-[calc(100%)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0"
+            : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px]  flex flex-col items-center fixed left-0 bottom-0 "
         }
       >
         <nav
@@ -57,19 +57,19 @@ function Menu() {
             {menu && "About"}
           </Link>
         </nav>
-        <button
+        {menu&&<button 
           onClick={() => {
             dispatch(setAddList());
           }}
           className="flex items-center w-[90%] p-[6px] mt-[10px] bg-stone-800 rounded-[10px]"
         >
           <FiPlus className="mx-[10px]" /> New playlist
-        </button>
-        <div className=" flex flex-col w-[95%]  justify-center px-[10px] py-[20px]">
+        </button>}
+        {menu&&<div className=" flex flex-col w-[95%]  justify-center px-[10px] py-[20px]">
           <MenuListElement/>
           <MenuListElement/>
           <MenuListElement/>
-        </div>
+        </div>}
       </div>
     </>
   );
