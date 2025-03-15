@@ -14,11 +14,14 @@ import { LuRepeat1 } from "react-icons/lu";
 import { IoShuffle } from "react-icons/io5";
 import { MdExpandLess } from "react-icons/md";
 import { MdExpandMore } from "react-icons/md";
+import { BiSolidLike } from "react-icons/bi";
+import { BiSolidDislike } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
 
 function Player() {
   const [value, setValue] = useState<number[]>([0, 0, 0]);
   const [kord, setKord] = useState<number>(100);
+  const [like,setLike]=useState([true,false])
   const tagRef = useRef(null);
   return (
     <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
@@ -38,7 +41,7 @@ function Player() {
           <p>Ela</p>
           <p>Reynmen • Ela • 2019</p>
         </div>
-        <BiDislike className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
+      {like[0]? <BiDislike onClick={()=>{setLike([false,like[1]])}} className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidDislike onClick={()=>{setLike([true,like[1]])}} className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
         <BiLike className="text-[29px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
         <SlOptionsVertical className="text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
       </div>
