@@ -50,7 +50,9 @@ function Player() {
         ></div>
         <IoVolumeHighOutline className="mx-[10px]" />
         </div>
-       { value[0]===0&&<LuRepeat className="mx-[10px]" /> }
+        { value[0]===0&&<LuRepeat onClick={()=>{setValue([1,value[1]])}} className="mx-[10px] text-stone-600" /> }
+        { value[0]===1&&<LuRepeat onClick={()=>{setValue([2,value[1]])}}  className="mx-[10px]" /> }
+        { value[0]===2&&<LuRepeat1 onClick={()=>{setValue([0,value[1]])}}  className="mx-[10px]" /> }
         <IoShuffle className="mx-[10px]" />
         <MdExpandMore className="mx-[10px]" />
       </div>
