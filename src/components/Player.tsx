@@ -14,10 +14,12 @@ import { LuRepeat1 } from "react-icons/lu";
 import { IoShuffle } from "react-icons/io5";
 import { MdExpandLess } from "react-icons/md";
 import { MdExpandMore } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Player() {
   const [value,setValue]=useState<number[]>([0,0,0])
+  const [kord,setKord]=useState<number>(100)
+  const tagRef=useRef(null)
   return (
     <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
       <div className="flex items-center w-[320px] text-[24px]">
@@ -42,12 +44,20 @@ function Player() {
       </div>
       <div className="flex justify-end items-center w-[320px] text-[24px]">
         <div className="flex group items-center">
-        <div
+        <div ref={tagRef}
           onClick={(e) => {
             console.log(e.clientX);
+            if(tagRef.current){
+               const x=tagRef.current.getBoundingClientRect()
+               setKord(Math.round(((e.clientX - x.left)/70)*100))
+               
+               console.log(kord)
+            }
           }}
-          className="hidden w-[70px] h-[3px] bg-stone-300 group-hover:flex"
-        ></div>
+          className="hidden w-[70px] h-[3px] bg-stone-500  group-hover:flex  items-center"
+        >
+          <div className={` bg-stone-300  h-[3px]`} style={{width:`${kord}%`}}></div>
+        </div>
         <IoVolumeHighOutline className="mx-[10px]" />
         </div>
         { value[0]===0&&<LuRepeat onClick={()=>{setValue([1,value[1],value[2]])}} className="mx-[10px] text-stone-600" /> }
