@@ -17,7 +17,7 @@ import { MdExpandMore } from "react-icons/md";
 import { useState } from "react";
 
 function Player() {
-  const [value,setValue]=useState<number[]>([0,0])
+  const [value,setValue]=useState<number[]>([0,0,0])
   return (
     <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
       <div className="flex items-center w-[320px] text-[24px]">
@@ -50,11 +50,14 @@ function Player() {
         ></div>
         <IoVolumeHighOutline className="mx-[10px]" />
         </div>
-        { value[0]===0&&<LuRepeat onClick={()=>{setValue([1,value[1]])}} className="mx-[10px] text-stone-600" /> }
-        { value[0]===1&&<LuRepeat onClick={()=>{setValue([2,value[1]])}}  className="mx-[10px]" /> }
-        { value[0]===2&&<LuRepeat1 onClick={()=>{setValue([0,value[1]])}}  className="mx-[10px]" /> }
-        <IoShuffle className="mx-[10px]" />
-        <MdExpandMore className="mx-[10px]" />
+        { value[0]===0&&<LuRepeat onClick={()=>{setValue([1,value[1],value[2]])}} className="mx-[10px] text-stone-600" /> }
+        { value[0]===1&&<LuRepeat onClick={()=>{setValue([2,value[1],value[2]])}}  className="mx-[10px]" /> }
+        { value[0]===2&&<LuRepeat1 onClick={()=>{setValue([0,value[1],value[2]])}}  className="mx-[10px]" /> }
+        { value[1]===0&&<IoShuffle onClick={()=>{setValue([value[0],1,value[2]])}}  className="mx-[10px] text-stone-600" /> }
+        { value[1]===1&&<IoShuffle onClick={()=>{setValue([value[0],0,value[2]])}}  className="mx-[10px]" /> }
+        { value[2]===0&&<MdExpandMore onClick={()=>{setValue([value[0],value[1],1])}}  className="mx-[10px]" /> }
+        { value[2]===1&&<MdExpandLess onClick={()=>{setValue([value[0],value[1],0])}}  className="mx-[10px]" /> }
+       
       </div>
     </div>
   );
