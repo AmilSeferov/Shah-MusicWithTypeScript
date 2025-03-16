@@ -4,9 +4,9 @@ import AutoPlay from './AutoPlay'
 
 function PlayerList() {
   return (
-    <div className='h-[100%]'>
+    <div className='flex flex-col grow'>
        <AutoPlay/>
-       <div className='overflow-auto h-[100%]'>
+       <div className='flex flex-col h-[420px] overflow-auto'>
        <MiniPlayerElement/>
        <MiniPlayerElement/>
        <MiniPlayerElement/>
