@@ -35,26 +35,26 @@ function Menu() {
           }
         >
           <Link
-            className="flex items-center h-[40px] w-100% bg-stone-800 rounded-[10px] p-[5px] my-[5px]"
+            className={(!menu&&"flex-col text-[10px]  ") + " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"}
             to={"/"}
           >
             <GoHomeFill className="text-[20px] mx-[10px]" />
-            {menu && "Home"}
+            { "Home"}
           </Link>
           <Link
-            className="flex items-center h-[40px] w-100% rounded-[10px] p-[5px] hover:bg-stone-700  my-[5px]"
+            className={(!menu&&"flex-col text-[10px]  ") + " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"}
             to={"/Discover"}
           >
             <RiCompassDiscoverFill className="text-[20px] mx-[10px]" />
-            {menu && "Discover"}
+            { "Discover"}
           </Link>
           <Link
-            className=" flex items-center h-[40px] w-100% rounded-[10px] p-[5px]  hover:bg-stone-700 my-[5px]"
+            className={(!menu&&"flex-col text-[10px]  ") + " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"}
             to={"/About"}
           >
             {" "}
             <TbArrowRoundaboutLeft className="text-[20px] mx-[10px]" />
-            {menu && "About"}
+            { "About"}
           </Link>
         </nav>
         {menu&&<button 
