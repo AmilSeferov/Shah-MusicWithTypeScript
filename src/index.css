@@ -1,2 +1,5 @@
 @import "tailwindcss";
-
+/* body{
+    min-height: 100vh;
+    background-color: rgb(11, 12, 12);
+} */

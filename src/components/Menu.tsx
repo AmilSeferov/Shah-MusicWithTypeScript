@@ -77,7 +77,7 @@ function Menu() {
           </button>
         )}
         {menu && (
-          <div className=" flex flex-col w-[95%] h-[50%] overflow-auto justify-center px-[10px] py-[20px]">
+          <div className=" flex flex-col w-[95%] h-[70%] overflow-auto justify-center px-[10px] py-[20px] mt-[10px]">
             <MenuListElement />
             <MenuListElement />
             <MenuListElement />

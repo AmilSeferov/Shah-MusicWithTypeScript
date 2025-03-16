@@ -15,7 +15,7 @@ function App() {
   
 
   return (
-    <>
+    <div className='min-h-[100vh] bg-stone-950'>
       <Header  />
       <main  className='flex flex-row  bg-stone-950 text-white  z-0'>
         <Menu/>
@@ -27,7 +27,7 @@ function App() {
       </Routes>
     </main>
     <Player/>
-    </>
+    </div>
   )
 }
 

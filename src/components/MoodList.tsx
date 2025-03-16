@@ -15,15 +15,15 @@ function MoodList() {
             }
           };
   return (
-    <div className="flex flex-col  w-[100%]">
-         <div className="flex flex-row items-center justify-between w-[95%] py-[10px]">
+    <div className="flex flex-col items-center  w-[100%]">
+         <div className="flex flex-row items-center justify-between w-[99%] py-[10px]">
                   <h2 className="text-[30px] font-bold">Ruh halleri ve Turleri</h2>
                   <div className="flex flex-row text-stone-500 text-[30px]">
                     <CiCircleChevLeft onClick={scrollLeft} />
                     <CiCircleChevRight onClick={scrollRight} />
                   </div>
                 </div>
-      <div ref={scrollContainerRef} className="  flex flex-col h-[270px] flex-wrap overflow-auto w-[95%]  ">
+      <div ref={scrollContainerRef} className="  flex flex-col h-[270px] flex-wrap overflow-auto w-[99%]  ">
         <MoodCard />
         <MoodCard />
         <MoodCard />
