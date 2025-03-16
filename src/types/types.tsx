@@ -4,4 +4,5 @@ export interface stateType{
     data: string[];
     menu: boolean;
     addPlayList:boolean
+    player:boolean
 }

@@ -9,7 +9,8 @@ const initialState:stateType = {
   error:false,
   data:[],
   menu:true,
-  addPlayList:false
+  addPlayList:false,
+  player:true,
 
 }
 
