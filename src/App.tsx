@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Header  />
-      <main  className='flex flex-row  bg-stone-950 text-white  '>
+      <main  className='flex flex-row  bg-stone-950 text-white  z-0'>
         <Menu/>
     
       <Routes >

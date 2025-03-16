@@ -19,14 +19,14 @@ function Menu() {
       <div
         className={
           menu
-            ? " w-[250px] h-[calc(100%-80px)]"
-            : "w-[70px] h-[calc(100%-80px)] "
+            ? " w-[250px] h-[calc(100%-80px)] "
+            : "w-[70px] h-[calc(100%-80px)]  "
         }
       ></div>
       <div
         className={
           menu
-            ? " text-stone-50 h-[calc(100%)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0"
+            ? " text-stone-50 h-[calc(100%)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0 "
             : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 "
         }
       >
@@ -67,7 +67,18 @@ function Menu() {
         >
           <FiPlus className="mx-[10px]" /> New playlist
         </button>}
-        {menu&&<div className=" flex flex-col w-[95%]  justify-center px-[10px] py-[20px]">
+        {menu&&<div className=" flex flex-col w-[95%] flex-1 overflow-auto justify-center px-[10px] py-[20px]">
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
+          <MenuListElement/>
           <MenuListElement/>
           <MenuListElement/>
           <MenuListElement/>

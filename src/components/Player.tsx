@@ -24,7 +24,7 @@ function Player() {
   const [like,setLike]=useState([true,true])
   const tagRef = useRef(null);
   return (
-    <div className="flex justify-between  w-[100%] absolute bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
+    <div className="flex justify-between  w-[100%] fixed bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
       <div className="flex items-center w-[320px] text-[24px]">
         <IoPlaySkipBackSharp />
         <IoIosPlay className="text-[34px] mx-[10px]" />
