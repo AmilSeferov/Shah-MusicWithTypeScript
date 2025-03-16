@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { GoHomeFill } from "react-icons/go";
 import { TbArrowRoundaboutLeft } from "react-icons/tb";
@@ -10,6 +10,8 @@ import { setAddList } from "../redux/Slice";
 import MenuListElement from "./MenuListElement";
 
 function Menu() {
+ 
+
   const dispatch = useDispatch();
   const menu = useSelector((state: RootState) => state.music.menu);
   return (
