@@ -25,12 +25,12 @@ function Menu() {
         className={
           menu
             ? " text-stone-50 h-[calc(100%)] w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0"
-            : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px]  flex flex-col items-center fixed left-0 bottom-0 "
+            : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 "
         }
       >
         <nav
           className={
-            (menu ? " border-b-[1px] border-gray-500" : "") +
+            (menu ? " border-b-[1px] border-gray-500" : " ") +
             "flex flex-col w-[95%]  justify-center px-[10px] py-[20px]"
           }
         >

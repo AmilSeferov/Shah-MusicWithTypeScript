@@ -1,12 +1,15 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setmenu } from "../redux/Slice";
+import { RootState } from "../redux/store";
 function Header() {
   const dispatch = useDispatch();
+   const menu = useSelector((state: RootState) => state.music.menu);
+
   return (
-    <header className="bg-stone-950 flex flex-row justify-between items-center p-[20px]  ">
+    <header className={(!menu&&"border-b-[1px] border-stone-500 ") + " bg-stone-950 flex flex-row justify-between items-center p-[20px]  "}>
       <div
         className="flex text-[20px] z-10"
         onClick={() => {
