@@ -8,9 +8,7 @@ function AutoPlay() {
         <p>Otamatik oynat</p>
         <p className="text-[12px] text-stone-400">Siranin sonuna benzer sarkilar ekleyin</p>
       </div>
-      
 <Toggle/>
-
     </div>
   );
 }

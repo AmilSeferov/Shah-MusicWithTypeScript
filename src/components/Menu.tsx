@@ -26,7 +26,7 @@ function Menu() {
         className={
          ( menu
             ? " text-stone-50  w-[200px] py-[10px]  pt-[24px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0 h-[calc(100%)] bottom-0 z-5 bg-stone-950 "
-            : " text-stone-50 h-[calc(100%-64px)] sm:h-[calc(100%-72px)] lg:h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 z-0 ")
+            : " text-stone-50 h-[calc(100%-64px)] hidden sm:h-[calc(100%-72px)] lg:h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 z-0 ")
             // +(player? 'h-[calc(100%-68px)] bottom-[68px] ':'')
         }
       >

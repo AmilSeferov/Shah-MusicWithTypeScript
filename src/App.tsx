@@ -19,12 +19,12 @@ function App() {
       <Header  />
       <main  className='flex flex-row  bg-stone-950 text-white  z-0'>
         <Menu/>
-{/*     
+    
       <Routes >
         <Route path='/' element={<Home/>}> </Route>
         <Route path='/discover' element={<Discover/>}> </Route>
 
-      </Routes> */}
+      </Routes>
     </main>
     {/* <Player/> */}
     </div>
