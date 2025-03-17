@@ -90,8 +90,8 @@ function Menu() {
             <FiPlus className="mx-[10px]" /> New playlist
           </button>
         )}
-        {/* {menu && (
-          <div className=" flex flex-col w-[95%] h-[70%] overflow-auto justify-center px-[10px] py-[20px] mt-[10px]">
+        {menu && (
+          <div className=" flex flex-col w-[95%] h-[70%] overflow-auto justify-center px-[10px] py-[20px] mt-[15px]">
             <MenuListElement />
             <MenuListElement />
             <MenuListElement />
@@ -107,7 +107,7 @@ function Menu() {
             <MenuListElement />
             <MenuListElement />
           </div>
-        )} */}
+        )}
       </div>
     </>
   );
