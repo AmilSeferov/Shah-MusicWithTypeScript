@@ -17,15 +17,16 @@ function Menu() {
     <>
       <div
         className={
-          (menu ? " w-[250px] " : "w-[70px] h-[calc(100%-80px)]  ") +
-          (player ? " h-[calc(100%-830px)]" : "")
+          (menu ? " w-[250px] " : "w-[70px] h-[calc(100%-80px)]  ") 
+          //+ (player ? " h-[calc(100%-830px)]" : "")
         }
       ></div>
       <div
         className={
          ( menu
-            ? " text-stone-50  w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 "
-            : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 ") +(player? 'h-[calc(100%-68px)] bottom-[68px] ':'')
+            ? " text-stone-50  w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0 h-[calc(100%)] bottom-0  "
+            : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 ")
+            // +(player? 'h-[calc(100%-68px)] bottom-[68px] ':'')
         }
       >
         <nav
@@ -76,7 +77,7 @@ function Menu() {
             <FiPlus className="mx-[10px]" /> New playlist
           </button>
         )}
-        {menu && (
+        {/* {menu && (
           <div className=" flex flex-col w-[95%] h-[70%] overflow-auto justify-center px-[10px] py-[20px] mt-[10px]">
             <MenuListElement />
             <MenuListElement />
@@ -93,7 +94,7 @@ function Menu() {
             <MenuListElement />
             <MenuListElement />
           </div>
-        )}
+        )} */}
       </div>
     </>
   );
