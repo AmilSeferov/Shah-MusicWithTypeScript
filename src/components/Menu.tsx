@@ -6,8 +6,9 @@ import { RiCompassDiscoverFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { FiPlus } from "react-icons/fi";
-import { setAddList } from "../redux/Slice";
+import { setAddList, setmenu } from "../redux/Slice";
 import MenuListElement from "./MenuListElement";
+import { AiOutlineMenu } from "react-icons/ai";
 
 function Menu() {
   const dispatch = useDispatch();
@@ -17,18 +18,30 @@ function Menu() {
     <>
       <div
         className={
-          (menu ? " w-[250px] " : "w-[70px] h-[calc(100%-80px)]  ") 
+          (menu ? " w-[250px] " : "w-[70px] h-[calc(100%-80px)]  z-0") 
           //+ (player ? " h-[calc(100%-830px)]" : "")
         }
       ></div>
       <div
         className={
          ( menu
-            ? " text-stone-50  w-[200px] py-[10px] pt-[64px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0 h-[calc(100%)] bottom-0  "
-            : " text-stone-50 h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 ")
+            ? " text-stone-50  w-[200px] py-[10px]  pt-[24px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 bottom-0 h-[calc(100%)] bottom-0 z-5 bg-stone-950 "
+            : " text-stone-50 h-[calc(100%-64px)] sm:h-[calc(100%-72px)] lg:h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex flex-col items-center fixed left-0 bottom-0 z-0 ")
             // +(player? 'h-[calc(100%-68px)] bottom-[68px] ':'')
         }
       >
+        {
+        menu&&  <div
+                  className="flex items-center text-[20px] z-10  w-[142px]"
+                  onClick={() => {
+                    dispatch(setmenu());
+                  }}
+                >
+                  <AiOutlineMenu className={"text-[26px] sm:text-[26px] text-white md:text-[26px] hover:text-[#5c5c5c]"} />
+                  <p className="text-white ml-[20px]  sm:flex md:text-[20px] lg:text-[22px]">Shah</p>
+                  <p className="text-yellow-300  sm:flex md:text-[20px] lg:text-[22px] ">Music</p>
+                </div>
+        }
         <nav
           className={
             (menu ? " border-b-[1px] border-gray-500" : " ") +
