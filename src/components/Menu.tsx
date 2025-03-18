@@ -18,7 +18,7 @@ function Menu() {
     <>
       <div
         className={
-          (menu ? "sm:w-[70px] md:w-[250px] " : "hidden sm:flex w-[70px] h-[calc(100%-80px)]  z-0") 
+          (menu ? "sm:w-[70px] md:w-[200px] " : "hidden sm:flex w-[70px] h-[calc(100%-80px)]  z-0") 
           //+ (player ? " h-[calc(100%-830px)]" : "")
         }
       ></div>

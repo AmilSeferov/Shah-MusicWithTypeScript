@@ -10,7 +10,7 @@ function MusicCard() {
      </div>
       <div className="text-[12px] sm:text-[16px]">
         <p className=" text-white w-[145px] sm:w-[165px] md:w-[170px] lg:w-[185px] xl:w-[195px] whitespace-nowrap overflow-hidden text-ellipsis">Alagözlüm (Neyləyim)</p>
-        <div className="flex text-stone-400 "><p className=" w-[45px] sm:w-[50px] md:w-[53px]  mr-[5px] md:mr-[10px]">Single</p><p className=" whitespace-nowrap overflow-hidden text-ellipsis w-[95px] sm:w-[105px] md:w-[108px] lg:w-[120px] xl:w-[130px] ">Akif İslamzadə</p></div>
+        <div className="flex text-stone-400 "><p className=" w-[45px]  sm:w-[50px] md:w-[53px]  mr-[5px] md:mr-[10px]">Single</p><p className=" whitespace-nowrap overflow-hidden text-ellipsis w-[95px] sm:w-[105px] md:w-[108px] lg:w-[120px] xl:w-[130px] ">Akif İslamzadə</p></div>
       </div>
     </div>
   );

@@ -6,27 +6,55 @@ function MusicList() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 860, behavior: "smooth" });
+      scrollContainerRef.current.scrollBy({ left: 460, behavior: "smooth" });
     }
   };
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -860, behavior: "smooth" });
+      scrollContainerRef.current.scrollBy({ left: -460, behavior: "smooth" });
     }
   };
   return (
-    <div className="flex flex-col w-[350px]">
+    <div className="flex flex-col w-[95%]  ">
       <div className="flex flex-row items-center justify-between w-[100%] py-[10px]">
-        <h2 className="text-[30px] font-bold">Hip Hop</h2>
-        <div className="flex flex-row text-stone-500 text-[30px]">
+        <h2 className="text-[20px] sm:text-[25px] md:text-[30px] font-bold">Hip Hop</h2>
+        <div className="flex flex-row text-stone-500 text-[20px] sm:text-[25px] md:text-[30px]">
           <CiCircleChevLeft onClick={scrollLeft} />
           <CiCircleChevRight onClick={scrollRight} />
         </div>
       </div>
       <div
         ref={scrollContainerRef}
-        className="flex flex-row overflow-x-auto  w-[100%] pb-[30px]"
+        className="flex flex-col h-[410px] sm:flex-row sm:flex-nowrap sm:h-fit justify-between flex-wrap md:flex-row overflow-x-auto  w-[100%] pb-[30px]"
       >
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
+        <MusicCard />
         <MusicCard />
         <MusicCard />
         <MusicCard />
