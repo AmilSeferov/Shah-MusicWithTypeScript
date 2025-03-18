@@ -11,7 +11,7 @@ function Home() {
 
   return (
     <div className={ (menu?'md:w-[calc(100%-200px)]':'') +' text-white w-full sm:w-[calc(100%-70px)]  flex justify-center pt-[20px]'}>
-            <MoodCard/>
+            <MoodList/>
 
     </div>
   )
