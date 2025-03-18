@@ -15,7 +15,7 @@ function MusicList() {
     }
   };
   return (
-    <div className="flex flex-col w-[100%]">
+    <div className="flex flex-col w-[350px]">
       <div className="flex flex-row items-center justify-between w-[100%] py-[10px]">
         <h2 className="text-[30px] font-bold">Hip Hop</h2>
         <div className="flex flex-row text-stone-500 text-[30px]">
@@ -33,16 +33,7 @@ function MusicList() {
         <MusicCard />
         <MusicCard />
         <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
-        <MusicCard />
+
       </div>
     </div>
   );

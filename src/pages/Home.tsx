@@ -1,12 +1,18 @@
 import MoodList from "../components/MoodList"
+import MusicCard from "../components/MusicCard"
 import MusicList from "../components/MusicList"
 
 
 function Home() {
 
   return (
-    <div className='text-white w-[calc(100%-200px)]  px-[0px] pt-[20px]'>
-            <MusicList/>
+    <div className='text-white   flex justify-center pt-[20px]'>
+            <MusicCard/>
+            <MusicCard/>
+            <MusicCard/>
+            <MusicCard/>
+            <MusicCard/>
+            <MusicCard/>
     </div>
   )
 }
