@@ -12,6 +12,7 @@ import PlayerPage from './pages/PlayerPage'
 import Player from './components/Player'
 function App() {
   const menu=useSelector((state:RootState)=>state.music.menu)
+  const player=useSelector((state:RootState)=>state.music.player)
   
 
   return (
@@ -19,14 +20,14 @@ function App() {
       <Header  />
       <main  className='flex flex-row  bg-stone-950 text-white  z-0'>
         <Menu/>
-    
+    {/* <PlayerPage/> */}
       <Routes >
         <Route path='/' element={<Home/>}> </Route>
         <Route path='/discover' element={<Discover/>}> </Route>
 
       </Routes>
     </main>
-    {/* <Player/> */}
+  {player&&<Player/>}  
     </div>
   )
 }

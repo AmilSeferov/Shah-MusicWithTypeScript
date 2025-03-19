@@ -24,8 +24,8 @@ function Header() {
     window.addEventListener('scroll', checkScrollPosition);
   },[])
   return (<>
-    <div className="w-[100%] h-[80px]"></div>
-    <header ref={headerRef} className={(!menu&&"border-b-[1px] border-stone-500 ") + (!headerVisible?" border-b-[1px] z-9 border-stone-500  ":" z-4")  + "  flex flex-row justify-between items-center p-[20px] fixed top-0 left-0 w-[100%]     "}>
+    <div className="w-[100%] h-[80px] "></div>
+    <header ref={headerRef} className={(!menu&&"border-b-[1px] border-stone-500 ") + (!headerVisible?" border-b-[1px] z-9 border-stone-500  ":" z-4")  + "  bg-stone-950 flex flex-row justify-between items-center p-[20px] fixed top-0 left-0 w-[100%]     "}>
       <div
         className="flex items-center text-[20px] z-10 "
         onClick={() => {
