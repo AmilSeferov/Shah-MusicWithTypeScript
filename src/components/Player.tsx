@@ -24,28 +24,28 @@ function Player() {
   const [like,setLike]=useState([true,true])
   const tagRef = useRef(null);
   return (
-    <div className="flex justify-between  w-[100%] fixed bottom-[0] py-[10px] bg-stone-800 px-[10px] text-stone-200">
-      <div className="flex items-center w-[320px] text-[24px]">
-        <IoPlaySkipBackSharp />
-        <IoIosPlay className="text-[34px] mx-[10px]" />
-        <IoPlaySkipForward />
-        <p className="text-[16px] px-[10px]">1:10/2:11</p>
+    <div className="flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
+      <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
+        <IoPlaySkipBackSharp className='hidden sm:flex' />
+        <IoIosPlay className="text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]" />
+        <IoPlaySkipForward className='' />
+        <p className="hidden text-[16px] px-[10px]">1:10/2:11</p>
       </div>
       <div className="flex items-center  text-stone-300">
         <img
-          className="h-[40px] w-[40px] mx-[10px]"
+          className="h-[36px] lg:h-[40px] lg:w-[40px] mx-[10px]"
           src="https://lh3.googleusercontent.com/sH5ZOCD2m1c-353xr08as8ljVXCSZsDJ7en61z_erCL6jOoatzeSZlHS3tnw3GaaC5NUhmhvlfIVr28=w60-h60-l90-rj"
           alt=""
         />
-        <div className="flex flex-col mx-[10px]">
+        <div className="text-[12px] flex flex-col w-[200px] whitespace-nowrap overflow-hidden text-ellipsis lg:mx-[10px]">
           <p>Ela</p>
-          <p>Reynmen • Ela • 2019</p>
+          <p>Reynmen • Ela • 2019 </p>
         </div>
-      {like[0]? <BiDislike onClick={()=>{setLike([false,like[1]])}} className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidDislike onClick={()=>{setLike([true,like[1]])}} className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
-      {like[1]? <BiLike onClick={()=>{setLike([like[0], false])}} className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidLike onClick={()=>{setLike([like[0],true])}} className="text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
-        <SlOptionsVertical className="text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
+      {like[0]? <BiDislike onClick={()=>{setLike([false,like[1]])}} className=" hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidDislike onClick={()=>{setLike([true,like[1]])}} className="hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
+      {like[1]? <BiLike onClick={()=>{setLike([like[0], false])}} className=" hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidLike onClick={()=>{setLike([like[0],true])}} className="hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
+        <SlOptionsVertical className="hidden text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
       </div>
-      <div className="flex justify-end items-center w-[320px] text-[24px]">
+      <div className=" justify-end items-center lg:w-[320px]  lg:text-[24px] hidden sm:flex sm:text-[18px] ">
         <div className="flex group items-center">
           <div
             ref={tagRef}
