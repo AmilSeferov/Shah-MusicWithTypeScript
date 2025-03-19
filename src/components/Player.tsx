@@ -29,7 +29,7 @@ function Player() {
         <IoPlaySkipBackSharp className='hidden sm:flex' />
         <IoIosPlay className="text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]" />
         <IoPlaySkipForward className='' />
-        <p className="hidden text-[16px] px-[10px]">1:10/2:11</p>
+        <p className="hidden lg:flex text-[16px] px-[10px]">1:10/2:11</p>
       </div>
       <div className="flex items-center  text-stone-300">
         <img
@@ -37,13 +37,13 @@ function Player() {
           src="https://lh3.googleusercontent.com/sH5ZOCD2m1c-353xr08as8ljVXCSZsDJ7en61z_erCL6jOoatzeSZlHS3tnw3GaaC5NUhmhvlfIVr28=w60-h60-l90-rj"
           alt=""
         />
-        <div className="text-[12px] flex flex-col w-[200px] whitespace-nowrap overflow-hidden text-ellipsis lg:mx-[10px]">
+        <div className="text-[12px] md:text-[14px] flex flex-col w-[200px] whitespace-nowrap overflow-hidden text-ellipsis lg:mx-[10px]">
           <p>Ela</p>
           <p>Reynmen • Ela • 2019 </p>
         </div>
-      {like[0]? <BiDislike onClick={()=>{setLike([false,like[1]])}} className=" hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidDislike onClick={()=>{setLike([true,like[1]])}} className="hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
-      {like[1]? <BiLike onClick={()=>{setLike([like[0], false])}} className=" hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidLike onClick={()=>{setLike([like[0],true])}} className="hidden text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
-        <SlOptionsVertical className="hidden text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
+      {like[0]? <BiDislike onClick={()=>{setLike([false,like[1]])}} className=" hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidDislike onClick={()=>{setLike([true,like[1]])}} className="hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
+      {like[1]? <BiLike onClick={()=>{setLike([like[0], false])}} className=" hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidLike onClick={()=>{setLike([like[0],true])}} className="hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
+        <SlOptionsVertical className="hidden md:flex md:text-[22px] lg:text-[24px] mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />
       </div>
       <div className=" justify-end items-center lg:w-[320px]  lg:text-[24px] hidden sm:flex sm:text-[18px] ">
         <div className="flex group items-center">
