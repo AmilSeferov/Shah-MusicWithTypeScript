@@ -23,7 +23,8 @@ function Player() {
   const [kord, setKord] = useState<number>(100);
   const [like,setLike]=useState([true,true])
   const tagRef = useRef(null);
-  return (
+  return <>
+    <div className='w-[100%] h-[52px] md:h-[58px] lg:h-[62px] ' ></div>
     <div className="flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
       <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
         <IoPlaySkipBackSharp className='hidden sm:flex' />
@@ -129,7 +130,7 @@ function Player() {
         )}
       </div>
     </div>
-  );
+    </>;
 }
 
 export default Player;

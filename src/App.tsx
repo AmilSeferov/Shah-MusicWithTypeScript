@@ -18,7 +18,7 @@ function App() {
   return (
     <div className='min-h-[100vh] bg-stone-950'>
       <Header  />
-      <main  className={(player&&' pb-[52px]' )+' flex flex-row  bg-stone-950 text-white  z-0'}>
+      <main  className={(player&&'h-[calc(100%-52px)] md:h-[calc(100%-58px)] lg:h-[calc(100%-62px)] overflow-auto' )+' flex flex-row  bg-stone-950 text-white  z-0'}>
         <Menu/>
     <PlayerPage/>
       {/* <Routes >

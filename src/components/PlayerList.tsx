@@ -4,36 +4,12 @@ import AutoPlay from './AutoPlay'
 
 function PlayerList({opacity}:{opacity:boolean}) {
   return (
-    <div className={(opacity?'hidden':'') + ' flex flex-col grow'}>
+    <div className={(opacity?'hidden':'') + ' w-[100%] flex flex-col  '}>
        <AutoPlay/>
-       <div className='flex flex-col h-[420px] overflow-auto'>
+       <div className='flex flex-col items-center h-[420px] w-[100%] overflow-x-auto'>
        <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
-       <MiniPlayerElement/>
+   
+       
        </div>
       
     </div>
