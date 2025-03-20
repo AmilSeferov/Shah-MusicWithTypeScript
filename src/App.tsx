@@ -20,12 +20,12 @@ function App() {
       <Header  />
       <main  className={(player&&' pb-[52px]' )+' flex flex-row  bg-stone-950 text-white  z-0'}>
         <Menu/>
-    {/* <PlayerPage/> */}
-      <Routes >
+    <PlayerPage/>
+      {/* <Routes >
         <Route path='/' element={<Home/>}> </Route>
         <Route path='/discover' element={<Discover/>}> </Route>
 
-      </Routes>
+      </Routes> */}
     </main>
   {player&&<Player/>}  
     </div>

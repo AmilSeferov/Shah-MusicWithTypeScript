@@ -38,8 +38,8 @@ function Menu() {
                 }}
               >
                 <AiOutlineMenu className={"sm:text-[26px] text-white md:text-[26px] lg:text-[30px] hover:text-[#5c5c5c]"} />
-                <p className="text-white ml-[20px] hidden sm:flex md:text-[20px] lg:text-[22px]">Shah</p>
-                <p className="text-yellow-300 hidden sm:flex md:text-[20px] lg:text-[22px] ">Music</p>
+                <p className="text-white ml-[20px] flex sm:flex md:text-[20px] lg:text-[22px]">Shah</p>
+                <p className="text-yellow-300 flex sm:flex md:text-[20px] lg:text-[22px] ">Music</p>
               </div>
         }
         <nav
