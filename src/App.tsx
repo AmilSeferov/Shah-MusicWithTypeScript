@@ -20,12 +20,13 @@ function App() {
       <Header  />
       <main  className={(player&&'h-[calc(100%-52px)] md:h-[calc(100%-58px)] lg:h-[calc(100%-62px)] overflow-auto' )+' flex flex-row  bg-stone-950 text-white  z-0'}>
         <Menu/>
-    <PlayerPage/>
-      {/* <Routes >
+    
+      <Routes >
         <Route path='/' element={<Home/>}> </Route>
         <Route path='/discover' element={<Discover/>}> </Route>
+        <Route path='/player' element={<PlayerPage/>}> </Route>
 
-      </Routes> */}
+      </Routes>
     </main>
   {player&&<Player/>}  
     </div>

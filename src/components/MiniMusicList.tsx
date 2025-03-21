@@ -16,15 +16,15 @@ function MiniMusicList() {
       };
   return (
     <>
-      <div className="flex flex-col  w-[100%]">
+      <div className="flex flex-col  w-[95%]">
         <div className="flex flex-row items-center justify-between w-[100%] py-[10px]">
-          <h2 className="text-[30px] font-bold">Hip Hop</h2>
-          <div className="flex flex-row text-stone-500 text-[30px]">
+          <h2 className="text-[22px] lg:text-[30px] font-bold">Hip Hop</h2>
+          <div className="flex flex-row text-stone-500 text-[22px] lg:text-[30px]">
             <CiCircleChevLeft onClick={scrollLeft} />
             <CiCircleChevRight onClick={scrollRight} />
           </div>
         </div>
-        <div ref={scrollContainerRef} className="flex flex-col h-[300px] flex-wrap overflow-auto pb-[10px]">
+        <div ref={scrollContainerRef} className="flex flex-col w-[100%] h-[300px] flex-wrap overflow-auto pb-[10px]">
           <MiniMusicCard />
           <MiniMusicCard />
           <MiniMusicCard />
