@@ -2,6 +2,7 @@ import { useRef } from "react";
 import MusicCard from "./MusicCard";
 import { CiCircleChevLeft } from "react-icons/ci";
 import { CiCircleChevRight } from "react-icons/ci";
+import ProfileCard from "./ProfileCard";
 function MusicList({data}:{data:any}) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollRight = () => {
@@ -27,6 +28,7 @@ function MusicList({data}:{data:any}) {
         ref={scrollContainerRef}
         className="flex flex-col h-[410px] sm:flex-row sm:flex-nowrap sm:h-fit justify-between flex-wrap md:flex-row overflow-x-auto  w-[100%] pb-[30px]"
       >
+        <ProfileCard/>
         {
           data?.[0]==='albums'&&data[1].items.map((item:any,index:number)=><MusicCard key={index} data={item}/>)
         }
