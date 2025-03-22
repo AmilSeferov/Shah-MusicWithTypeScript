@@ -8,7 +8,8 @@ import MiniMusicList from "../components/MiniMusicList";
 
 function Home() {
   const menu = useSelector((state: RootState) => state.music.menu);
-
+const data=Object.entries(useSelector((state:RootState)=>state.music.data))
+console.log(data)
   return (
     <div
       className={
@@ -16,6 +17,9 @@ function Home() {
         " text-white w-full sm:w-[calc(100%-70px)]  flex flex-col items-center justify-center pt-[20px]"
       }
     >
+      {data.map((item,index)=>{
+        return <MusicList key={index} data={item}/>
+      })}
   <MusicList/>
     </div>
   );
