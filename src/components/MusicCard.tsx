@@ -1,7 +1,6 @@
 import { FaCirclePlay } from "react-icons/fa6"; 
 import { Link } from "react-router";
 function MusicCard({data}:{data:any}) {
-   console.log(data)
   return (
     <Link to={'/player'}>
     <div className="w-fit relative mr-[10px] md:mr-[10px] lg:mr-[10px]">
