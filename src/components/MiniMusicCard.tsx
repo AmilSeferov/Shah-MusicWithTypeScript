@@ -18,11 +18,11 @@ function MiniMusicCard() {
         <div className="flex flex-row whitespace-nowrap overflow-hidden text-ellipsis text-[12px] lg:text-[14px] ">
           <p className="mr-[15px] w-[90px] whitespace-nowrap overflow-hidden text-ellipsis  group-hover:w-[70px] ">
             Ibrahim Tatlises
-          </p>{" "}
-          <p className="w-[110px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[90px]">
+          </p>
+          <p className="w-[110px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[90px] ">
             16mln izlenme
           </p>
-          <SlOptionsVertical className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]" />
+          <SlOptionsVertical className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  " />
         </div>
       </div>
     </div>

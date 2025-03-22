@@ -16,9 +16,7 @@ function Home() {
         " text-white w-full sm:w-[calc(100%-70px)]  flex flex-col items-center justify-center pt-[20px]"
       }
     >
-      {/* <MusicList />
-      <MoodList /> */}
-      <MiniMusicList />
+  <MusicList/>
     </div>
   );
 }
