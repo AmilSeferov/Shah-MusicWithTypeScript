@@ -4,7 +4,7 @@ import { TbPlaylist } from "react-icons/tb";
 import { CiFaceSmile } from "react-icons/ci";
 function DiscoverFilters() {
   return (
-    <div className="h-[50px] flex flex-row justify-between w-[100%]  ">
+    <div className="h-[50px] flex flex-row justify-between w-[90%]  ">
       <div className="bg-stone-600 p-[15px]  w-[340px] text-[18px] rounded-[5px] flex  items-center font-bold">
         
         <SiMusicbrainz className="text-[20px] mr-[15px]" /> Yeni Cikanlar
