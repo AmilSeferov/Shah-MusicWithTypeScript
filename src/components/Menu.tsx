@@ -14,6 +14,8 @@ function Menu() {
   const dispatch = useDispatch();
   const menu = useSelector((state: RootState) => state.music.menu);
   const player = useSelector((state: RootState) => state.music.player);
+  const playList= useSelector((state: RootState) => state.music.data.playlists.items)
+  console.log(playList)
   return (
     <>
       <div
@@ -91,14 +93,7 @@ function Menu() {
         )}
         {menu && (
           <div className=" flex flex-col w-[95%] h-[calc(100%-280px)] overflow-auto  px-[10px] py-[20px] mt-[15px]">
-            <MenuListElement />
-            <MenuListElement />
-            <MenuListElement />
-            <MenuListElement />
-            <MenuListElement />
-            <MenuListElement />
-            <MenuListElement />
-            <MenuListElement />
+{playList.map((item:any,index:number)=><MenuListElement key={index} data={item}/>)}         
           </div>
         )}
       </div>
