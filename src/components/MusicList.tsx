@@ -19,7 +19,7 @@ function MusicList({ data }: { data: any }) {
     <div className="flex flex-col w-[95%]  ">
       <div className="flex flex-row items-center justify-between w-[100%] py-[10px]">
         <h2 className="text-[20px] sm:text-[25px] md:text-[30px] font-bold">
-          {data?.[0]}
+          {data?.[0].toUpperCase()}
         </h2>
         <div className="flex flex-row text-stone-500 text-[20px] sm:text-[25px] md:text-[30px]">
           <CiCircleChevLeft onClick={scrollLeft} />

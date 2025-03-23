@@ -1,7 +1,8 @@
 import { FaPlay } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
 
-function MiniMusicCard() {
+function MiniMusicCard({data}:{data:any}) {
+  console.log(data)
   return (
     <div className="w-[280px] lg:w-[340px] flex flex-row items-center group relative m-[10px] ">
       <img

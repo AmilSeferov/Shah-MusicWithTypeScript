@@ -2,7 +2,7 @@ import { useRef } from "react";
 import MiniMusicCard from "./MiniMusicCard";
 import { CiCircleChevLeft } from "react-icons/ci";
 import { CiCircleChevRight } from "react-icons/ci";
-function MiniMusicList() {
+function MiniMusicList({data}:{data:any}) {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
       const scrollRight = () => {
         if (scrollContainerRef.current) {
@@ -14,6 +14,7 @@ function MiniMusicList() {
           scrollContainerRef.current.scrollBy({ left: -860, behavior: "smooth" });
         }
       };
+
   return (
     <>
       <div className="flex flex-col  w-[95%]">
@@ -25,27 +26,7 @@ function MiniMusicList() {
           </div>
         </div>
         <div ref={scrollContainerRef} className="flex flex-col w-[100%] h-[300px] flex-wrap overflow-auto pb-[10px]">
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
-          <MiniMusicCard />
+       {data[1].items.map((item:any,index:number)=><MiniMusicCard key={index} data={item}/>)}
         </div>
       </div>
     </>

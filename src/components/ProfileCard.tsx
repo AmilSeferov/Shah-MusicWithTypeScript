@@ -1,7 +1,6 @@
 import { Link } from "react-router"
 
 function ProfileCard({data}:{data:any}) {
-  console.log(data?.data.visuals.avatarImage?.sources[0].url)
   return (
     <Link to={'/player'}>
     <div className="w-[150px] sm:w-[170px] md:w-[175px] lg:w-[190px] xl:w-[200px] h-fit flex flex-col items-center mr-[10px] ">
