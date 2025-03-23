@@ -1,7 +1,6 @@
 import { FaRegCirclePlay } from "react-icons/fa6";
 
 function MenuListElement({data}:{data:any}) {
-  console.log(data.data.images.items[0].sources[0])
   return (
     <div className="group relative flex flex-row items-center justify-between w-100% rounded-[10px] h-fit py-[2px] px-[5px]  hover:bg-stone-700 my-[5px]">
     <div className="flex">

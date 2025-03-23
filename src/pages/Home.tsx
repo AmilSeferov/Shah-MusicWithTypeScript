@@ -22,6 +22,8 @@ function Home() {
       {data.map((item, index) => {
         if(item[0].toUpperCase()==='TRACKS'){ 
         return<MiniMusicList key={index} data={item}/>
+        }else if (item[0].toUpperCase()==='TOPRESULTS'){
+          
         } else{
         return <MusicList key={index} data={item} />;}
       })}

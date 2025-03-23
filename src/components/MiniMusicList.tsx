@@ -14,12 +14,12 @@ function MiniMusicList({data}:{data:any}) {
           scrollContainerRef.current.scrollBy({ left: -860, behavior: "smooth" });
         }
       };
-
+console.log(data[0])
   return (
     <>
       <div className="flex flex-col  w-[95%]">
         <div className="flex flex-row items-center justify-between w-[100%] py-[10px]">
-          <h2 className="text-[22px] lg:text-[30px] font-bold">Hip Hop</h2>
+          <h2 className="text-[22px] lg:text-[30px] font-bold">{data[0].toUpperCase()}</h2>
           <div className="flex flex-row text-stone-500 text-[22px] lg:text-[30px]">
             <CiCircleChevLeft onClick={scrollLeft} />
             <CiCircleChevRight onClick={scrollRight} />

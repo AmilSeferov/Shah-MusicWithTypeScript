@@ -15,7 +15,6 @@ function Menu() {
   const menu = useSelector((state: RootState) => state.music.menu);
   const player = useSelector((state: RootState) => state.music.player);
   const playList= useSelector((state: RootState) => state.music.data.playlists.items)
-  console.log(playList)
   return (
     <>
       <div
