@@ -12,7 +12,7 @@ function PlayListForm() {
   const aps=useSelector((state:RootState)=>state.music.addPlayList)
   const dispatch = useDispatch();
   return (
-    <div className={(aps?'flex':'hidden') + " w-[640px] h-[400px] p-[25px] bg-stone-900 fixed top-[calc(50%-200px)] left-[calc(50%-320px)] z-9  font-bold  flex-col justify-between"}>
+    <div className={(aps?'flex':'hidden') + " w-[320px] h-[300px] sm:w-[480px] sm:h-[350px] md:w-[640px] md:h-[400px] p-[25px] bg-stone-900 fixed top-[calc(50%-150px)] left-[calc(50%-160px)]  sm:top-[calc(50%-175px)] sm:left-[calc(50%-240px)] md:top-[calc(50%-200px)] md:left-[calc(50%-320px)] z-9 text-[12px] sm:text-[14px] md:text-[16px] font-bold  flex-col justify-between"}>
       <h2>New PlayList</h2>
       <div>
         <input
@@ -60,7 +60,7 @@ function PlayListForm() {
             onClick={() => {
               setselect(!select);
             }}
-            className="flex items-center  w-[180px]  text-[18px] font-[600] py-[10px] "
+            className="flex items-center  w-[180px] text-[14px] sm:text-[16px] md:text-[18px] font-[600] py-[10px] "
           >
             <GiWorld className="text-[20px] mr-[15px] " /> Herkese acik
           </div>
@@ -73,14 +73,14 @@ function PlayListForm() {
           <ul
             className={
               (select ? "opacity-[0]" : "opacity-[1]") +
-              " absolute bottom-[-190px] bg-stone-800 py-[5px] "
+              " absolute bottom-[-190px] bg-stone-800 py-[5px] text-[12px] sm:text-[14px] md:text-[16px] "
             }
           >
             <li
               onClick={() => {
                 setselect(!select);
               }}
-              className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
+              className="flex items-center  w-[260px]  font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
             >
               <GiWorld className="text-[20px] mr-[15px] " />
               <div>
@@ -94,7 +94,7 @@ function PlayListForm() {
               onClick={() => {
                 setselect(!select);
               }}
-              className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
+              className="flex items-center  w-[260px]  font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
             >
               <AiOutlineDisconnect className="text-[20px] mr-[15px] " />
               <div>
@@ -108,7 +108,7 @@ function PlayListForm() {
               onClick={() => {
                 setselect(!select);
               }}
-              className="flex items-center  w-[260px]  text-[16px] font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
+              className="flex items-center  w-[260px]  font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
             >
               <CiLock className="text-[20px] mr-[15px] " />
               <div>
