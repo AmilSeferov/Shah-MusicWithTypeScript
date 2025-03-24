@@ -83,6 +83,7 @@ function Menu() {
         {menu && (
           <button
             onClick={() => {
+              console.log('click')
               dispatch(setAddList());
             }}
             className="flex items-center w-[90%] p-[6px] mt-[10px] bg-stone-800 rounded-[10px]"

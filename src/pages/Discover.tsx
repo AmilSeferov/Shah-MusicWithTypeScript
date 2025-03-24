@@ -13,7 +13,6 @@ function Discover() {
 
   return <div className={(menu?' w-full md:w-[calc(100%-200px)]':'  sm:w-[calc(100%-70px)]') + '  flex flex-col items-center'}>
    <DiscoverFilters/>
-<ProfileCard/>
 
     <div className='text-white'></div>
   </div>

@@ -27,6 +27,8 @@ function App() {
         <Route path='/player' element={<PlayerPage/>}> </Route>
 
       </Routes>
+      <PlayListForm/>
+   
     </main>
   {player&&<Player/>}  
     </div>

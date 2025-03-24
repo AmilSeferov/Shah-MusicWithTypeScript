@@ -12,7 +12,7 @@ function PlayListForm() {
   const aps=useSelector((state:RootState)=>state.music.addPlayList)
   const dispatch = useDispatch();
   return (
-    <div className={(aps?'flex':'hidden') + " w-[640px] h-[400px] p-[25px] bg-stone-900 fixed top-[calc(50%-160px)] left-[calc(50%-200px)] z-9  font-bold  flex-col justify-between"}>
+    <div className={(aps?'flex':'hidden') + " w-[640px] h-[400px] p-[25px] bg-stone-900 fixed top-[calc(50%-200px)] left-[calc(50%-320px)] z-9  font-bold  flex-col justify-between"}>
       <h2>New PlayList</h2>
       <div>
         <input
