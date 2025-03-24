@@ -22,7 +22,11 @@ function Home() {
       {data.map((item, index) => {
         if(item[0].toUpperCase()==='TRACKS'){ 
         return<MiniMusicList key={index} data={item}/>
-        }else if (item[0].toLowerCase()==='artists'||item[0].toLowerCase()==='albums'){
+        }else if (item[0].toLowerCase()==='artists'){
+        return <MusicList key={index} data={item} />;}
+      })}
+      {data.map((item, index) => {
+        if (item[0].toLowerCase()==='albums'){
         return <MusicList key={index} data={item} />;}
       })}
     </div>
