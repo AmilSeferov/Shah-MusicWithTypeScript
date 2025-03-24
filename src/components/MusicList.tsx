@@ -39,6 +39,7 @@ function MusicList({ data }: { data: any }) {
           data[1].items.map((item: any, index: number) => (
             <ProfileCard key={index} data={item} />
           ))}
+
       </div>
     </div>
   );
