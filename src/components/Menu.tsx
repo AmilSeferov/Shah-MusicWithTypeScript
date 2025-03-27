@@ -6,7 +6,7 @@ import { RiCompassDiscoverFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { FiPlus } from "react-icons/fi";
-import { setAddList, setmenu } from "../redux/Slice";
+import { addPlayList, setAddList, setmenu } from "../redux/Slice";
 import MenuListElement from "./MenuListElement";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -14,34 +14,59 @@ function Menu() {
   const dispatch = useDispatch();
   const menu = useSelector((state: RootState) => state.music.menu);
   const player = useSelector((state: RootState) => state.music.player);
-  const playList= useSelector((state: RootState) => state.music.data.playlists.items)
+  const playList = useSelector(
+    (state: RootState) => state.music.data.playlists.items
+  );
+  useEffect(() => {
+    playList.map((item: any) => {
+      return dispatch(
+        addPlayList({
+          name: item.data.name,
+          img: item.data.images.items[0].sources[0].url,
+        })
+      );
+    });
+  }, []);
   return (
     <>
       <div
         className={
-          (menu ? "sm:w-[70px] md:w-[200px] " : "hidden sm:flex w-[75px] h-[calc(100%-80px)]  z-0") 
+          menu
+            ? "sm:w-[70px] md:w-[200px] "
+            : "hidden sm:flex w-[75px] h-[calc(100%-80px)]  z-0"
           //+ (player ? " h-[calc(100%-830px)]" : "")
         }
       ></div>
       <div
         className={
-         ( menu
-            ? (player? 'h-[calc(100%-52px)] md:h-[calc(100%-58px)] lg:h-[calc(100%-62px)] ':'h-[100%]') +" text-stone-50  w-[200px] py-[10px]  pt-[24px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 top-0  z-5 bg-stone-950 "
-            : " text-stone-50 h-[calc(100%-64px)] hidden sm:flex sm:h-[calc(100%-72px)] lg:h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex-col items-center fixed left-0 bottom-0 z-0 ")
+          menu
+            ? (player
+                ? "h-[calc(100%-52px)] md:h-[calc(100%-58px)] lg:h-[calc(100%-62px)] "
+                : "h-[100%]") +
+              " text-stone-50  w-[200px] py-[10px]  pt-[24px] border-r-[1px] border-gray-500 flex flex-col items-center fixed left-0 top-0  z-5 bg-stone-950 "
+            : " text-stone-50 h-[calc(100%-64px)] hidden sm:flex sm:h-[calc(100%-72px)] lg:h-[calc(100%-80px)] w-[70px] py-[10px] border-r-[1px] border-gray-500  flex-col items-center fixed left-0 bottom-0 z-0 "
         }
       >
-        {
-        menu&&    <div
-                className="flex items-center text-[20px] z-10 "
-                onClick={() => {
-                  dispatch(setmenu());
-                }}
-              >
-                <AiOutlineMenu className={"sm:text-[26px] text-white md:text-[26px] lg:text-[30px] hover:text-[#5c5c5c]"} />
-                <p className="text-white ml-[20px] flex sm:flex md:text-[20px] lg:text-[22px]">Shah</p>
-                <p className="text-yellow-300 flex sm:flex md:text-[20px] lg:text-[22px] ">Music</p>
-              </div>
-        }
+        {menu && (
+          <div
+            className="flex items-center text-[20px] z-10 "
+            onClick={() => {
+              dispatch(setmenu());
+            }}
+          >
+            <AiOutlineMenu
+              className={
+                "sm:text-[26px] text-white md:text-[26px] lg:text-[30px] hover:text-[#5c5c5c]"
+              }
+            />
+            <p className="text-white ml-[20px] flex sm:flex md:text-[20px] lg:text-[22px]">
+              Shah
+            </p>
+            <p className="text-yellow-300 flex sm:flex md:text-[20px] lg:text-[22px] ">
+              Music
+            </p>
+          </div>
+        )}
         <nav
           className={
             (menu ? " border-b-[1px] border-gray-500" : " ") +
@@ -83,7 +108,7 @@ function Menu() {
         {menu && (
           <button
             onClick={() => {
-              console.log('click')
+              console.log("click");
               dispatch(setAddList());
             }}
             className="flex items-center w-[90%] p-[6px] mt-[10px] bg-stone-800 rounded-[10px]"
@@ -93,7 +118,9 @@ function Menu() {
         )}
         {menu && (
           <div className=" flex flex-col w-[95%] h-[calc(100%-280px)] overflow-auto  px-[10px] py-[20px] mt-[15px]">
-{playList.map((item:any,index:number)=><MenuListElement key={index} data={item}/>)}         
+            {playList.map((item: any, index: number) => (
+              <MenuListElement key={index} data={item} />
+            ))}
           </div>
         )}
       </div>

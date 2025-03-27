@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import { stateType } from '../types/types'
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { playListType, stateType } from "../types/types";
 const data = {
   albums: {
     totalCount: 1000,
@@ -2796,32 +2796,39 @@ const data = {
   },
 };
 
-
-const initialState:stateType = {
-  isLoading:false,
-  error:false,
-  data:data,
-  menu:true,
-  addPlayList:false,
-  player:false,
-playLists:[]
-}
+const initialState: stateType = {
+  isLoading: false,
+  error: false,
+  data: data,
+  menu: true,
+  addPlayList: false,
+  player: false,
+  playLists: [],
+};
 
 export const counterSlice = createSlice({
-  name: 'music',
+  name: "music",
   initialState,
   reducers: {
-    setmenu:(state)=>{
-     state.menu=!state.menu
+    setmenu: (state) => {
+      state.menu = !state.menu;
     },
-    setAddList:(state)=>{
- state.addPlayList=!state.addPlayList
-    }
-    
+    setAddList: (state) => {
+      state.addPlayList = !state.addPlayList;
+    },
+    addPlayList: (
+      state,
+      actions: {
+        payload: playListType;
+        type: string;
+      }
+    ) => {
+      state.playLists = [...state.playLists,actions.payload];
+    },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const {setmenu, setAddList } = counterSlice.actions
+export const { setmenu, setAddList,addPlayList } = counterSlice.actions;
 
-export default counterSlice.reducer
+export default counterSlice.reducer;
