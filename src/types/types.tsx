@@ -5,4 +5,9 @@ export interface stateType {
   menu: boolean;
   addPlayList: boolean;
   player: boolean;
+  playLists:playListType[]
+}
+export interface playListType {
+  name:string;
+  img:string;
 }

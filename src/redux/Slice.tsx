@@ -2804,7 +2804,7 @@ const initialState:stateType = {
   menu:true,
   addPlayList:false,
   player:false,
-
+playLists:[]
 }
 
 export const counterSlice = createSlice({
