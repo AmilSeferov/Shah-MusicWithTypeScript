@@ -2803,7 +2803,7 @@ const initialState:stateType = {
   data:data,
   menu:true,
   addPlayList:false,
-  player:true,
+  player:false,
 
 }
 
