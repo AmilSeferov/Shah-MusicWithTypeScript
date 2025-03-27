@@ -8,7 +8,7 @@ import { RootState } from "../redux/store";
 import { setAddList } from "../redux/Slice";
 function PlayListForm() {
   const [ref, setref] = useState<boolean[]>([false, false, false]);
-  const [select, setselect] = useState<boolean>(true);
+  const [select, setselect] = useState<(boolean | number)[]>([true, 1]);
   const aps=useSelector((state:RootState)=>state.music.addPlayList)
   const dispatch = useDispatch();
   return (
@@ -58,7 +58,7 @@ function PlayListForm() {
         <div className="flex items-center relative   ">
           <div
             onClick={() => {
-              setselect(!select);
+              setselect([!select[0],select[1]]);
             }}
             className="flex items-center  w-[180px] text-[14px] sm:text-[16px] md:text-[18px] font-[600] py-[10px] "
           >
@@ -67,18 +67,19 @@ function PlayListForm() {
           <IoIosArrowDown
             className="text-[20px]  "
             onClick={() => {
-              setselect(!select);
+              setselect([!select[0],select[1]]);
             }}
           />
           <ul
             className={
-              (select ? "opacity-[0]" : "opacity-[1]") +
+              (select[0] ? "opacity-[0]" : "opacity-[1]") +
               " absolute bottom-[-190px] bg-stone-800 py-[5px] text-[12px] sm:text-[14px] md:text-[16px] "
             }
           >
             <li
-              onClick={() => {
-                setselect(!select);
+              onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+                setselect([!select[0],select[1]]);
+                console.log(e.currentTarget)
               }}
               className="flex items-center  w-[260px]  font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
             >
@@ -92,7 +93,7 @@ function PlayListForm() {
             </li>
             <li
               onClick={() => {
-                setselect(!select);
+                setselect([!select[0],select[1]]);
               }}
               className="flex items-center  w-[260px]  font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
             >
@@ -106,7 +107,7 @@ function PlayListForm() {
             </li>
             <li
               onClick={() => {
-                setselect(!select);
+                setselect([!select[0],select[1]]);
               }}
               className="flex items-center  w-[260px]  font-[600] px-[10px]  h-[60px] hover:bg-stone-500"
             >
