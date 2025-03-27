@@ -3,18 +3,31 @@ import './App.css'
 import Header from './components/Header'
 import Menu from './components/Menu'
 import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from './redux/store'
 import Home from './pages/Home'
 import Discover from './pages/Discover'
 import PlayListForm from './components/PlayListForm'
 import PlayerPage from './pages/PlayerPage'
 import Player from './components/Player'
+import { addPlayList } from './redux/Slice'
 function App() {
   const menu=useSelector((state:RootState)=>state.music.menu)
+  const dispatch = useDispatch();
   const player=useSelector((state:RootState)=>state.music.player)
-  
-
+   const playList = useSelector(
+      (state: RootState) => state.music.data.playlists.items
+    );
+useEffect(()=>{
+  playList.map((item: any) => {
+    return dispatch(
+      addPlayList({
+        name: item.data.name,
+        img: item.data.images.items[0].sources[0].url,
+      })
+    );
+  });
+},[])
   return (
     <div className='min-h-[100vh] bg-stone-950'>
       <Header  />

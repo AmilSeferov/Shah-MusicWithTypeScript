@@ -14,19 +14,12 @@ function Menu() {
   const dispatch = useDispatch();
   const menu = useSelector((state: RootState) => state.music.menu);
   const player = useSelector((state: RootState) => state.music.player);
+  const playLists = useSelector((state: RootState) => state.music.playLists);
   const playList = useSelector(
     (state: RootState) => state.music.data.playlists.items
   );
-  useEffect(() => {
-    playList.map((item: any) => {
-      return dispatch(
-        addPlayList({
-          name: item.data.name,
-          img: item.data.images.items[0].sources[0].url,
-        })
-      );
-    });
-  }, []);
+
+
   return (
     <>
       <div
@@ -118,7 +111,7 @@ function Menu() {
         )}
         {menu && (
           <div className=" flex flex-col w-[95%] h-[calc(100%-280px)] overflow-auto  px-[10px] py-[20px] mt-[15px]">
-            {playList.map((item: any, index: number) => (
+            {playLists.map((item: any, index: number) => (
               <MenuListElement key={index} data={item} />
             ))}
           </div>

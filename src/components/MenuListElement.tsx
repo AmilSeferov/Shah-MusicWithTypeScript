@@ -4,9 +4,9 @@ function MenuListElement({data}:{data:any}) {
   return (
     <div className="group relative flex flex-row items-center justify-between w-100% rounded-[10px] h-fit py-[2px] px-[5px]  hover:bg-stone-700 my-[5px]">
     <div className="flex">
-    <img className="w-[32px] h-[32px] rounded-full mr-[10px]" src={data.data.images.items[0].sources[0].url?data.data.images.items[0].sources[0].url:"https://i.scdn.co/image/ab6761610000e5eb6d5529e3962a16bd267bfeb2"} alt=""  />
+    <img className="w-[32px] h-[32px] rounded-full mr-[10px]" src={data.img} alt=""  />
       <div className="flex flex-col" >
-        <p className="text-stone-50 w-[90px]  whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[50px]">{data.data.name}</p>
+        <p className="text-stone-50 w-[90px]  whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[50px]">{data.name}</p>
         {/* <p className="text-[12px] text-stone-400">amilseferov1</p> */}
       </div>
     </div>
