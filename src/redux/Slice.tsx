@@ -2796,6 +2796,12 @@ const data = {
   },
 };
 
+const playLists: playListType[] = data.playlists.items.map((item: any) => {
+  return {
+    name: item.data.name,
+    img: item.data.images.items[0].sources[0].url,
+  };
+});
 const initialState: stateType = {
   isLoading: false,
   error: false,
@@ -2803,7 +2809,7 @@ const initialState: stateType = {
   menu: true,
   addPlayList: false,
   player: false,
-  playLists: [],
+  playLists: playLists,
 };
 
 export const counterSlice = createSlice({
@@ -2823,12 +2829,12 @@ export const counterSlice = createSlice({
         type: string;
       }
     ) => {
-      state.playLists = [...state.playLists,actions.payload];
+      state.playLists = [...state.playLists, actions.payload];
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setmenu, setAddList,addPlayList } = counterSlice.actions;
+export const { setmenu, setAddList, addPlayList } = counterSlice.actions;
 
 export default counterSlice.reducer;
