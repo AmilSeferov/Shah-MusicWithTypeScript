@@ -5,9 +5,14 @@ export interface stateType {
   menu: boolean;
   addPlayList: boolean;
   player: any;
-  playLists:playListType[]
+  playLists:playListType[];
+  profile:profileType;
 }
 export interface playListType {
+  name:string;
+  img:string;
+}
+export interface profileType {
   name:string;
   img:string;
 }

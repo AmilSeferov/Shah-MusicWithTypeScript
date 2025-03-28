@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { playListType, stateType } from "../types/types";
+import { playListType, profileType, stateType } from "../types/types";
 const data = {
   albums: {
     totalCount: 1000,
@@ -2810,6 +2810,7 @@ const initialState: stateType = {
   addPlayList: false,
   player: null,
   playLists: playLists,
+  profile: { name: "", img: "" },
 };
 
 export const counterSlice = createSlice({
@@ -2838,12 +2839,22 @@ export const counterSlice = createSlice({
         type: string;
       }
     ) => {
-      state.player=actions.payload
+      state.player = actions.payload;
+    },
+    addProfile: (
+      state,
+      actions: {
+        payload: profileType;
+        type: string;
+      }
+    ) => {
+      state.profile = actions.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setmenu, setAddList, addPlayList,addPlayer } = counterSlice.actions;
+export const { setmenu, setAddList, addPlayList, addPlayer,addProfile } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;
