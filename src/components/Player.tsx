@@ -17,12 +17,15 @@ import { MdExpandMore } from "react-icons/md";
 import { BiSolidLike } from "react-icons/bi";
 import { BiSolidDislike } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 function Player() {
   const [value, setValue] = useState<number[]>([0, 0, 0]);
   const [kord, setKord] = useState<number>(100);
   const [like,setLike]=useState([true,true])
   const tagRef = useRef(null);
+  const data=useSelector((state:RootState)=>state.music.player)
   return <>
     <div className='w-[100%] h-[52px] md:h-[58px] lg:h-[62px] ' ></div>
     <div className="flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
@@ -35,12 +38,12 @@ function Player() {
       <div className="flex items-center  text-stone-300">
         <img
           className="h-[36px] lg:h-[40px] lg:w-[40px] mx-[10px]"
-          src="https://lh3.googleusercontent.com/sH5ZOCD2m1c-353xr08as8ljVXCSZsDJ7en61z_erCL6jOoatzeSZlHS3tnw3GaaC5NUhmhvlfIVr28=w60-h60-l90-rj"
+          src={data.img}
           alt=""
         />
         <div className="text-[12px] md:text-[14px] flex flex-col w-[200px] whitespace-nowrap overflow-hidden text-ellipsis lg:mx-[10px]">
-          <p>Ela</p>
-          <p>Reynmen • Ela • 2019 </p>
+          <p>{data.name}</p>
+          <p>{data.artist} • {data.name} • 2019 </p>
         </div>
       {like[0]? <BiDislike onClick={()=>{setLike([false,like[1]])}} className=" hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidDislike onClick={()=>{setLike([true,like[1]])}} className="hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  
       {like[1]? <BiLike onClick={()=>{setLike([like[0], false])}} className=" hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />:<BiSolidLike onClick={()=>{setLike([like[0],true])}} className="hidden md:flex md:text-[26px] lg:text-[29px]  mx-[10px] hover:bg-stone-400 p-[4px] rounded-[50%]" />}  

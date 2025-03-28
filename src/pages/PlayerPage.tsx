@@ -1,15 +1,18 @@
 import { useState } from "react";
 
 import PlayerList from "../components/PlayerList";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 function PlayerPage() {
   const [active, setActive] = useState<number>(1);
-
+const data=useSelector((state:RootState)=>state.music.player)
+console.log()
   return (
     <div className="lg:h-[calc(100vh-198px)] w-[100%]  flex flex-col items-center  lg:flex-row lg:justify-around mt-[50px]">
       <div className="w-[100%] lg:h-[100%] lg:w-[40%] flex justify-center  ">
         <img
           className="max-h-[calc(90%)] "
-          src="https://lh3.googleusercontent.com/VXBgP6Qqigmd89iW-5RnR8CPcotv1vtihE4y45glVfxFt5VQX6B_mTfTuptcONOGwvJPmQJFTF8uKOU=w544-h544-l90-rj"
+          src={data.img}
           alt=""
         />
 
