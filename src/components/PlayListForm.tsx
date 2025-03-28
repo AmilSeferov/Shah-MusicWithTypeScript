@@ -5,10 +5,11 @@ import { CiLock } from "react-icons/ci";
 import { AiOutlineDisconnect } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { setAddList } from "../redux/Slice";
+import { addPlayList, setAddList } from "../redux/Slice";
 function PlayListForm() {
   const [ref, setref] = useState<boolean[]>([false, false, false]);
   const [select, setselect] = useState<(boolean | number)[]>([true, 1]);
+  const [value, setValue] = useState<string>("");
   const aps = useSelector((state: RootState) => state.music.addPlayList);
   const dispatch = useDispatch();
   return (
@@ -23,6 +24,9 @@ function PlayListForm() {
         <input
           onClick={() => {
             setref([true, false, false]);
+          }}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setValue(e.target.value);
           }}
           type="text"
           className="w-[100%] outline-none"
@@ -67,9 +71,14 @@ function PlayListForm() {
             }}
             className="flex items-center  w-[180px] text-[14px] sm:text-[16px] md:text-[18px] font-[600] py-[10px] "
           >
-         {   select[1]===1&&<GiWorld className="text-[20px] mr-[15px] " /> }{  select[1]===1&&<p> Herkese acik</p>}
-         {   select[1]===2&&<AiOutlineDisconnect className="text-[20px] mr-[15px] " />  }{  select[1]===2&&<p> Liste dışı</p>}
-         {   select[1]===3&&<CiLock className="text-[20px] mr-[15px] " />  }{  select[1]===3&&<p> Gizli</p>}
+            {select[1] === 1 && <GiWorld className="text-[20px] mr-[15px] " />}
+            {select[1] === 1 && <p> Herkese acik</p>}
+            {select[1] === 2 && (
+              <AiOutlineDisconnect className="text-[20px] mr-[15px] " />
+            )}
+            {select[1] === 2 && <p> Liste dışı</p>}
+            {select[1] === 3 && <CiLock className="text-[20px] mr-[15px] " />}
+            {select[1] === 3 && <p> Gizli</p>}
           </div>
           <IoIosArrowDown
             className="text-[20px]  "
@@ -144,7 +153,13 @@ function PlayListForm() {
         >
           Iptal
         </button>
-        <button className="bg-stone-400 w-[100px] h-[30px] rounded-[20px] ml-[20px]">
+        <button
+          onClick={() => {
+            dispatch(addPlayList({ name: value, img: "" }));
+            dispatch(setAddList());
+          }}
+          className="bg-stone-400 w-[100px] h-[30px] rounded-[20px] ml-[20px]"
+        >
           Olusdur
         </button>
       </div>
