@@ -4,7 +4,7 @@ export interface stateType {
   data:any; 
   menu: boolean;
   addPlayList: boolean;
-  player: boolean;
+  player: any;
   playLists:playListType[]
 }
 export interface playListType {

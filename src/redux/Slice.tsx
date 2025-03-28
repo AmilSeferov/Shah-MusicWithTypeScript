@@ -2808,7 +2808,7 @@ const initialState: stateType = {
   data: data,
   menu: true,
   addPlayList: false,
-  player: false,
+  player: null,
   playLists: playLists,
 };
 
@@ -2831,10 +2831,19 @@ export const counterSlice = createSlice({
     ) => {
       state.playLists = [...state.playLists, actions.payload];
     },
+    addPlayer: (
+      state,
+      actions: {
+        payload: any;
+        type: string;
+      }
+    ) => {
+      state.player=actions.payload
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setmenu, setAddList, addPlayList } = counterSlice.actions;
+export const { setmenu, setAddList, addPlayList,addPlayer } = counterSlice.actions;
 
 export default counterSlice.reducer;
