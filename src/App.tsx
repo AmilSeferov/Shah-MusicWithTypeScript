@@ -11,6 +11,7 @@ import PlayListForm from "./components/PlayListForm";
 import PlayerPage from "./pages/PlayerPage";
 import Player from "./components/Player";
 import { addPlayList } from "./redux/Slice";
+import ProfilePage from "./pages/ProfilePage";
 function App() {
   const player = useSelector((state: RootState) => state.music.player);
 
@@ -28,15 +29,10 @@ function App() {
         <Menu />
 
         <Routes>
-          <Route path="/" element={<Home />}>
-            {" "}
-          </Route>
-          <Route path="/discover" element={<Discover />}>
-            {" "}
-          </Route>
-          <Route path="/player" element={<PlayerPage />}>
-            {" "}
-          </Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/discover" element={<Discover />}></Route>
+          <Route path="/player" element={<PlayerPage />}></Route>
+          <Route path="/profile" element={<ProfilePage/>}></Route>
         </Routes>
         <PlayListForm />
       </main>
