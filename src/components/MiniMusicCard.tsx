@@ -1,5 +1,6 @@
 import { FaPlay } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
+import Option from "./Option";
 
 function MiniMusicCard({ data }: { data: any }) {
   return (
@@ -29,6 +30,7 @@ function MiniMusicCard({ data }: { data: any }) {
             16mln izlenme
           </p>
           <SlOptionsVertical className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  " />
+          <Option visible={false}/>
         </div>
       </div>
     </div>
