@@ -2811,6 +2811,7 @@ const initialState: stateType = {
   player: null,
   playLists: playLists,
   profile: { name: "", img: "" },
+  playList:{name:'', img: ''}
 };
 
 export const counterSlice = createSlice({
@@ -2850,11 +2851,16 @@ export const counterSlice = createSlice({
     ) => {
       state.profile = actions.payload;
     },
+    selectPlayList:(state, actions: {
+      payload: profileType;
+      type: string;})=>{
+    state.playList=actions.payload
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setmenu, setAddList, addPlayList, addPlayer,addProfile } =
+export const { setmenu, setAddList, addPlayList, addPlayer,addProfile,selectPlayList } =
   counterSlice.actions;
 
 export default counterSlice.reducer;

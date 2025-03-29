@@ -7,6 +7,7 @@ export interface stateType {
   player: any;
   playLists:playListType[];
   profile:profileType;
+  playList:playListType;
 }
 export interface playListType {
   name:string;
