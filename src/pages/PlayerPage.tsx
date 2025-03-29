@@ -55,7 +55,7 @@ console.log()
             </li>
           </ul>
           <div className=" w-[60%]  flex  justify-center  mb-[10px]">
-           {active===1 && <PlayerList opacity={false}/>}
+           {active===1 && <PlayerList />}
            {active===2 && <p className=''>{}</p>}
            {active===3 && ''}
           </div>
