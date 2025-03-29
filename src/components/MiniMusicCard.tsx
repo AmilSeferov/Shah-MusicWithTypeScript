@@ -1,8 +1,10 @@
 import { FaPlay } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
 import Option from "./Option";
+import { useState } from "react";
 
 function MiniMusicCard({ data }: { data: any }) {
+  const [visible,setVisible]= useState<boolean>(false)
   return (
     <div className="w-[280px] lg:w-[340px] flex flex-row items-center group relative m-[10px] ">
       <img
@@ -26,11 +28,11 @@ function MiniMusicCard({ data }: { data: any }) {
               " , " +
               data.data.artists.items[1]?.profile.name}
           </p>
-          <p className="w-[110px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[90px] ">
+          <p  className="w-[110px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[90px] ">
             16mln izlenme
           </p>
-          <SlOptionsVertical className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  " />
-          <Option visible={false}/>
+          <SlOptionsVertical onClick={()=>setVisible(!visible)} className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  " />
+          <Option visible={visible}/>
         </div>
       </div>
     </div>
