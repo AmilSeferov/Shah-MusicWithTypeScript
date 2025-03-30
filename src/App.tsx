@@ -22,8 +22,8 @@ function App() {
       <Header />
       <main
         className={
-          (player &&
-            "h-[calc(100%-52px)] md:h-[calc(100%-58px)] lg:h-[calc(100%-62px)] overflow-auto") +
+          (player ?
+            "h-[calc(100%-52px)] md:h-[calc(100%-58px)] lg:h-[calc(100%-62px)] overflow-auto":'h-[100%]') +
           " flex flex-row  bg-stone-950 text-white  z-0"
         }
       >
