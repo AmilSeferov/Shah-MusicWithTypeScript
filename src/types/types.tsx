@@ -12,6 +12,11 @@ export interface stateType {
 export interface playListType {
   name:string;
   img:string;
+  musics:musicType[]
+}
+export interface musicType {
+  name:string;
+  img:string;
 }
 export interface profileType {
   name:string;

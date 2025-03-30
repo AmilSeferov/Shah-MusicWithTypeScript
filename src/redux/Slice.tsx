@@ -2800,6 +2800,7 @@ const playLists: playListType[] = data.playlists.items.map((item: any) => {
   return {
     name: item.data.name,
     img: item.data.images.items[0].sources[0].url,
+    musics:[]
   };
 });
 const initialState: stateType = {
@@ -2811,7 +2812,7 @@ const initialState: stateType = {
   player: null,
   playLists: playLists,
   profile: { name: "", img: "" },
-  playList:{name:'', img: ''}
+  playList:{name:'', img: '',musics:[]}
 };
 
 export const counterSlice = createSlice({
@@ -2852,7 +2853,7 @@ export const counterSlice = createSlice({
       state.profile = actions.payload;
     },
     selectPlayList:(state, actions: {
-      payload: profileType;
+      payload: playListType;
       type: string;})=>{
     state.playList=actions.payload
     },
