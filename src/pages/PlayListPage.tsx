@@ -13,8 +13,10 @@ function PlayListPage() {
   return (
     <div className="flex flex-col lg:flex-row justify-around w-full min-h-[100%] lg:h-[calc(100vh-160px)] relative items-center">
       <div className="flex flex-col w-[40%] lg:h-[100%] justify-center  items-center">
-        <img  src={data.img} alt="" />
-        <p className="mt-[10px] text-[18px] md:text-[24px] font-bold ">{data.name}</p>
+        <img src={data.img} alt="" />
+        <p className="mt-[10px] text-[18px] md:text-[24px] font-bold ">
+          {data.name}
+        </p>
         <div className="flex items-center justify-around w-[100%] lg:w-[60%]">
           <div className=" h-[30px] w-[30px] lg:w-[45px] lg:h-[45px] rounded-full bg-neutral-800 flex justify-center items-center">
             <FaPen />
@@ -33,12 +35,9 @@ function PlayListPage() {
           <p>Sirala</p>
         </div>
         <div className="w-full overflow-auto  lg:h-[100%]">
-        {
-          data.musics.map((item)=> <PlayListELement />)
-        }
-          
-
-   
+          {data.musics.map((item, index) => (
+            <PlayListELement key={index} data={item} />
+          ))}
         </div>
       </div>
     </div>
