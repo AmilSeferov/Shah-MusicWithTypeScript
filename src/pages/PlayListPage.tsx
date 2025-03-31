@@ -33,20 +33,11 @@ function PlayListPage() {
           <p>Sirala</p>
         </div>
         <div className="w-full overflow-auto  lg:h-[100%]">
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
-          <PlayListELement />
+        {
+          data.musics.map((item)=> <PlayListELement />)
+        }
+          
+
    
         </div>
       </div>
