@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { playListType, profileType, stateType } from "../types/types";
+import { musicType, playListType, profileType, stateType } from "../types/types";
 const data = {
   albums: {
     totalCount: 1000,
@@ -2800,7 +2800,7 @@ const playLists: playListType[] = data.playlists.items.map((item: any) => {
   return {
     name: item.data.name,
     img: item.data.images.items[0].sources[0].url,
-    musics:[]
+    musics: [],
   };
 });
 const initialState: stateType = {
@@ -2812,7 +2812,8 @@ const initialState: stateType = {
   player: null,
   playLists: playLists,
   profile: { name: "", img: "" },
-  playList:{name:'', img: '',musics:[]}
+  playList: { name: "", img: "", musics: [] },
+  selectedMusic: null,
 };
 
 export const counterSlice = createSlice({
@@ -2852,17 +2853,36 @@ export const counterSlice = createSlice({
     ) => {
       state.profile = actions.payload;
     },
-    selectPlayList:(state, actions: {
-      payload: playListType;
-      type: string;})=>{
-    state.playList=actions.payload
+    selectPlayList: (
+      state,
+      actions: {
+        payload: playListType;
+        type: string;
+      }
+    ) => {
+      state.playList = actions.payload;
     },
+    sellectMusic: (
+      state,
+      actions: {
+        payload: musicType;
+        type: string;
+      }
+    ) => {
+      state.selectedMusic = actions.payload;
+    },
+    add_toPlayList: (state) => {},
   },
-  
 });
 
 // Action creators are generated for each case reducer function
-export const { setmenu, setAddList, addPlayList, addPlayer,addProfile,selectPlayList } =
-  counterSlice.actions;
+export const {
+  setmenu,
+  setAddList,
+  addPlayList,
+  addPlayer,
+  addProfile,
+  selectPlayList,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;

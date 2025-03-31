@@ -8,6 +8,7 @@ export interface stateType {
   playLists:playListType[];
   profile:profileType;
   playList:playListType;
+  selectedMusic:null|musicType
 }
 export interface playListType {
   name:string;
