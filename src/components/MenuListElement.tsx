@@ -1,12 +1,16 @@
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router";
-import { selectPlayList } from "../redux/Slice";
+import { add_toPlayList, selectPlayList, sellectMusic } from "../redux/Slice";
 import { IoIosAddCircleOutline } from "react-icons/io";
 function MenuListElement({data,add}:{data:any , add:boolean}) {
   const disPatch=useDispatch()
   return (
-    <div className="group relative flex flex-row items-center justify-between w-[100%] rounded-[10px] h-fit py-[2px] px-[5px]  hover:bg-stone-700 my-[5px]">
+    <div onClick={()=>{
+      
+      add&&disPatch(add_toPlayList(data));
+      add&&disPatch(sellectMusic(null))
+    }} className="group relative flex flex-row items-center justify-between w-[100%] rounded-[10px] h-fit py-[2px] px-[5px]  hover:bg-stone-700 my-[5px]">
       
     <div className="flex w-[calc(100%-25px)]">
     <img className="w-[32px] h-[32px] rounded-full mr-[10px]" src={data.img} alt=""  />

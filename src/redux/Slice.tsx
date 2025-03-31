@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { musicType, playListType, profileType, stateType } from "../types/types";
+import {
+  musicType,
+  playListType,
+  profileType,
+  stateType,
+} from "../types/types";
 const data = {
   albums: {
     totalCount: 1000,
@@ -2865,13 +2870,21 @@ export const counterSlice = createSlice({
     sellectMusic: (
       state,
       actions: {
-        payload:null|musicType;
+        payload: null | musicType;
         type: string;
       }
     ) => {
-      state.selectedMusic =actions.payload;
+      state.selectedMusic = actions.payload;
     },
-    add_toPlayList: (state) => {},
+    add_toPlayList: (state, actions) => {
+      state.playLists.filter((item) => {
+        if (
+          item.name === actions.payload.name &&
+          item.img === actions.payload.img
+        )
+          state.selectedMusic !== null && item.musics.push(state.selectedMusic);
+      });
+    },
   },
 });
 
@@ -2884,6 +2897,7 @@ export const {
   addProfile,
   selectPlayList,
   sellectMusic,
+  add_toPlayList,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
