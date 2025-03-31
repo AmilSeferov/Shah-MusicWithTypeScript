@@ -2858,6 +2858,7 @@ export const counterSlice = createSlice({
     state.playList=actions.payload
     },
   },
+  
 });
 
 // Action creators are generated for each case reducer function

@@ -112,7 +112,7 @@ function Menu() {
         {menu && (
           <div className=" flex flex-col w-[95%] h-[calc(100%-280px)] overflow-auto  px-[10px] py-[20px] mt-[15px]">
             {playLists.map((item: any, index: number) => (
-              <MenuListElement key={index} data={item} />
+              <MenuListElement key={index} data={item} add={false} />
             ))}
           </div>
         )}
