@@ -2883,6 +2883,7 @@ export const {
   addPlayer,
   addProfile,
   selectPlayList,
+  sellectMusic,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

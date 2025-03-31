@@ -1,10 +1,17 @@
 import { FaPlay } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
 import Option from "./Option";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 function MiniMusicCard({ data }: { data: any }) {
   const [visible,setVisible]= useState<boolean>(false)
+  const sellectedMusic=useSelector((state:RootState)=>state.music.selectedMusic)
+  useEffect(()=>{
+      sellectedMusic && setVisible(false)
+  },[sellectedMusic])
+
   return (
     <div className="w-[280px] lg:w-[340px] flex flex-row items-center group relative m-[10px] ">
       <img
@@ -32,7 +39,7 @@ function MiniMusicCard({ data }: { data: any }) {
             16mln izlenme
           </p>
           <SlOptionsVertical onClick={()=>setVisible(!visible)} className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  " />
-          <Option visible={visible}/>
+          <Option visible={visible} data={{name:data.data.name,img:data.data.albumOfTrack.coverArt.sources[1].url}}/>
         </div>
       </div>
     </div>
