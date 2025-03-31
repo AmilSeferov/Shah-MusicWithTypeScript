@@ -2865,11 +2865,11 @@ export const counterSlice = createSlice({
     sellectMusic: (
       state,
       actions: {
-        payload: musicType;
+        payload:null|musicType;
         type: string;
       }
     ) => {
-      state.selectedMusic = actions.payload;
+      state.selectedMusic =actions.payload;
     },
     add_toPlayList: (state) => {},
   },
