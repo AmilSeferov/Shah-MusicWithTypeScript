@@ -12,7 +12,7 @@ function MusicCard({data}:{data:any}) {
   useEffect(()=>{
     // sellectedMusic!={name:data.data.name,img:data.data.coverArt.sources[0].url}&&setVisible(false)
   },[sellectedMusic])
-  console.log(sellectedMusic)
+  // console.log(sellectedMusic)
   return (
     
     <div onContextMenu={(event)=>{

@@ -11,7 +11,6 @@ function Home() {
   const data = Object.entries(
     useSelector((state: RootState) => state.music.data)
   );
-  console.log(data);
   return (
     <div
       className={

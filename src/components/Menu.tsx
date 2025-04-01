@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { GoHomeFill } from "react-icons/go";
 import { TbArrowRoundaboutLeft } from "react-icons/tb";
 import { RiCompassDiscoverFill } from "react-icons/ri";
@@ -18,8 +18,8 @@ function Menu() {
   const playList = useSelector(
     (state: RootState) => state.music.data.playlists.items
   );
-
-
+const locations=useLocation().pathname
+console.log(locations)
   return (
     <>
       <div
@@ -68,7 +68,7 @@ function Menu() {
         >
           <Link
             className={
-              (!menu && "flex-col text-[10px]  ") +
+              (!menu && "flex-col text-[10px]  ") + (locations==='/'?' bg-stone-600 ':'') +
               " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
             }
             to={"/"}
@@ -78,7 +78,7 @@ function Menu() {
           </Link>
           <Link
             className={
-              (!menu && "flex-col text-[10px]  ") +
+              (!menu && "flex-col text-[10px]  ") + (locations==='/Discover'?' bg-stone-600 ':'') +
               " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
             }
             to={"/Discover"}
@@ -88,7 +88,7 @@ function Menu() {
           </Link>
           <Link
             className={
-              (!menu && "flex-col text-[10px]  ") +
+              (!menu && "flex-col text-[10px]  ") + (locations==='/About'?' bg-stone-600 ':'') +
               " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
             }
             to={"/About"}
@@ -101,7 +101,6 @@ function Menu() {
         {menu && (
           <button
             onClick={() => {
-              console.log("click");
               dispatch(setAddList());
             }}
             className="flex items-center w-[90%] p-[6px] mt-[10px] bg-stone-800 rounded-[10px]"

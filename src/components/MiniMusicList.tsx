@@ -14,7 +14,6 @@ function MiniMusicList({data}:{data:any}) {
           scrollContainerRef.current.scrollBy({ left: -860, behavior: "smooth" });
         }
       };
-console.log(data[0])
   return (
     <>
       <div className="flex flex-col  w-[95%]">
