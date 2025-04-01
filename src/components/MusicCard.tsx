@@ -26,7 +26,7 @@ function MusicCard({ data }: { data: any }) {
     >
       <Option
         visible={visible}
-       
+       setvisible={setVisible}
       />
       <div className="group relative w-[150px] sm:w-[170px] md:w-[175px] lg:w-[190px] xl:w-[200px]">
         <img

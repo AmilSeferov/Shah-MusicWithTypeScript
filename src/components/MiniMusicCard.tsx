@@ -13,7 +13,10 @@ function MiniMusicCard({ data }: { data: any }) {
     (state: RootState) => state.music.selectedMusic
   );
   const disPatch = useDispatch();
-  useEffect(() => {}, [sellectedMusic]);
+  useEffect(() => {
+    sellectedMusic.music?.img!==data.data.albumOfTrack.coverArt.sources[1].url&&setVisible(false)
+    
+  }, [sellectedMusic.music]);
 
   return (
     <div className="w-[280px] lg:w-[340px] flex flex-row items-center group relative m-[10px] ">
@@ -65,7 +68,7 @@ function MiniMusicCard({ data }: { data: any }) {
           />
           <Option
             visible={visible}
-           
+           setvisible={setVisible}
           />
         </div>
       </div>
