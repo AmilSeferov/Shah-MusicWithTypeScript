@@ -2,11 +2,17 @@ import { FaCirclePlay } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router";
 import { addPlayer } from "../redux/Slice";
+import Option from "./Option";
+import { useState } from "react";
 function MusicCard({data}:{data:any}) {
   const disPatch=useDispatch()
+  const[visible,setVisible]=useState<boolean>(false)
   return (
     
-    <div className="w-fit relative mr-[10px] md:mr-[10px] lg:mr-[10px]">
+    <div onContextMenu={(event)=>{
+      event.preventDefault();
+      setVisible(!visible)}} className="w-fit relative mr-[10px] md:mr-[10px] lg:mr-[10px]">
+      <Option visible={visible} data={{name:data.data.name,img:data.data.coverArt.sources[0].url}} />
      <div className="group relative w-[150px] sm:w-[170px] md:w-[175px] lg:w-[190px] xl:w-[200px]">
      <img className= "h-[150px] sm:h-[170px] md:h-[175px] lg:h-[190px] xl:w-[200px]  rounded-[5px] "
        src={data.data.coverArt.sources[0].url} alt="" />
