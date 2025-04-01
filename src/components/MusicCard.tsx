@@ -1,12 +1,18 @@
 import { FaCirclePlay } from "react-icons/fa6"; 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { addPlayer } from "../redux/Slice";
 import Option from "./Option";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { RootState } from "../redux/store";
 function MusicCard({data}:{data:any}) {
-  const disPatch=useDispatch()
-  const[visible,setVisible]=useState<boolean>(false)
+  const disPatch=useDispatch();
+  const[visible,setVisible]=useState<boolean>(false);
+  const sellectedMusic=useSelector((state:RootState)=>state.music.selectedMusic)
+  useEffect(()=>{
+    // sellectedMusic!={name:data.data.name,img:data.data.coverArt.sources[0].url}&&setVisible(false)
+  },[sellectedMusic])
+  console.log(sellectedMusic)
   return (
     
     <div onContextMenu={(event)=>{

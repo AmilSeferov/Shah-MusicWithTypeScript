@@ -2,14 +2,17 @@ import { FaPlay } from "react-icons/fa";
 import { SlOptionsVertical } from "react-icons/sl";
 import Option from "./Option";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { Link } from "react-router";
+import { addPlayer } from "../redux/Slice";
 
 function MiniMusicCard({ data }: { data: any }) {
   const [visible,setVisible]= useState<boolean>(false)
   const sellectedMusic=useSelector((state:RootState)=>state.music.selectedMusic)
+  const disPatch=useDispatch()
   useEffect(()=>{
-      sellectedMusic && setVisible(false)
+     
   },[sellectedMusic])
 
   return (
@@ -24,7 +27,9 @@ function MiniMusicCard({ data }: { data: any }) {
         alt=""
       />
       <div className="bg-stone-950 absolute left-0 hidden lg:flex  w-[48px] h-[48px] opacity-[0] group-hover:opacity-[0.7]"></div>
-      <FaPlay className="absolute left-[15px] top-[15px] text-[20px] opacity-[0] group-hover:opacity-[1]" />
+      <Link onClick={()=>{
+        disPatch(addPlayer({name:data.data.name ,artist:data.data.artists.items[0].profile.name,img:data.data.albumOfTrack.coverArt.sources[2].url}))
+      }} to={'/player'}> <FaPlay className="absolute left-[15px] top-[15px] text-[20px] opacity-[0] group-hover:opacity-[1]" /></Link>
       <div className="ml-[10px]">
         <p className="whitespace-nowrap overflow-hidden text-ellipsis w-[240px] text-[14px] lg:text-[16px] lg:w-[270px] px-[2px] group-hover:w-[200px]">
           {data.data.name}
