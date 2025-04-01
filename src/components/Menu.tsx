@@ -18,8 +18,8 @@ function Menu() {
   const playList = useSelector(
     (state: RootState) => state.music.data.playlists.items
   );
-const locations=useLocation().pathname
-console.log(locations)
+  const locations = useLocation().pathname;
+  console.log(locations);
   return (
     <>
       <div
@@ -62,13 +62,14 @@ console.log(locations)
         )}
         <nav
           className={
-            (menu ? " border-b-[1px] border-gray-500" : " ") +
-            "flex flex-col w-[95%]  justify-center px-[10px] py-[20px]"
+            (menu ? " border-b-[1px] border-gray-500 mt-[10px] " : " ") +
+            "flex flex-col w-[95%]  justify-center px-[10px] py-[20px] "
           }
         >
           <Link
             className={
-              (!menu && "flex-col text-[10px]  ") + (locations==='/'?' bg-stone-600 ':'') +
+              (!menu && "flex-col text-[10px]  ") +
+              (locations === "/" ? " bg-stone-600 " : "") +
               " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
             }
             to={"/"}
@@ -78,7 +79,8 @@ console.log(locations)
           </Link>
           <Link
             className={
-              (!menu && "flex-col text-[10px]  ") + (locations==='/Discover'?' bg-stone-600 ':'') +
+              (!menu && "flex-col text-[10px]  ") +
+              (locations === "/Discover" ? " bg-stone-600 " : "") +
               " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
             }
             to={"/Discover"}
@@ -88,7 +90,8 @@ console.log(locations)
           </Link>
           <Link
             className={
-              (!menu && "flex-col text-[10px]  ") + (locations==='/About'?' bg-stone-600 ':'') +
+              (!menu && "flex-col text-[10px]  ") +
+              (locations === "/About" ? " bg-stone-600 " : "") +
               " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
             }
             to={"/About"}

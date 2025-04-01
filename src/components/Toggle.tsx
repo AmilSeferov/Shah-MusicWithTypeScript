@@ -8,7 +8,7 @@ const Toggle = () => {
       <button
         onClick={() => setIsOn(!isOn)}
         className={`relative w-10 h-5 rounded-full transition ${
-          isOn ?"bg-blue-500" :"bg-stone-700" 
+          isOn ? "bg-blue-500" : "bg-stone-700"
         }`}
       >
         <div

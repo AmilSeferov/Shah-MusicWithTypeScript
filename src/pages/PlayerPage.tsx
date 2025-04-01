@@ -5,17 +5,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 function PlayerPage() {
   const [active, setActive] = useState<number>(1);
-const data=useSelector((state:RootState)=>state.music.player)
-console.log()
+  const data = useSelector((state: RootState) => state.music.player);
+  console.log();
   return (
     <div className="lg:h-[calc(100vh-198px)] w-[100%]  flex flex-col items-center  lg:flex-row lg:justify-around mt-[50px]">
       <div className="w-[100%] lg:h-[100%] lg:w-[40%] flex justify-center  ">
-        <img
-          className="max-h-[calc(90%)] "
-          src={data.img}
-          alt=""
-        />
-
+        <img className="max-h-[calc(90%)] " src={data.img} alt="" />
       </div>
       <div className=" w-[90%] lg:w-[50%] lg:flex justify-end px-[10px] lg:mr-[40px]  ">
         <div className=" w-[100%] flex flex-col items-center h-[100%]">
@@ -55,9 +50,9 @@ console.log()
             </li>
           </ul>
           <div className=" w-[60%]  flex  justify-center  mb-[10px]">
-           {active===1 && <PlayerList />}
-           {active===2 && <p className=''>{}</p>}
-           {active===3 && ''}
+            {active === 1 && <PlayerList />}
+            {active === 2 && <p className="">{}</p>}
+            {active === 3 && ""}
           </div>
         </div>
       </div>

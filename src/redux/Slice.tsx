@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 import {
   musicType,
   playListType,
@@ -2818,7 +2817,7 @@ const initialState: stateType = {
   playLists: playLists,
   profile: { name: "", img: "" },
   playList: { name: "", img: "", musics: [] },
-  selectedMusic: null,
+  selectedMusic: {music:null,toPlayList:false},
 };
 
 export const counterSlice = createSlice({
@@ -2874,7 +2873,7 @@ export const counterSlice = createSlice({
         type: string;
       }
     ) => {
-      state.selectedMusic = actions.payload;
+      state.selectedMusic.music = actions.payload;
     },
     add_toPlayList: (state, actions) => {
       state.playLists.filter((item) => {
@@ -2882,8 +2881,11 @@ export const counterSlice = createSlice({
           item.name === actions.payload.name &&
           item.img === actions.payload.img
         )
-          state.selectedMusic !== null && item.musics.push(state.selectedMusic);
+          state.selectedMusic.music !== null && item.musics.push(state.selectedMusic.music);
       });
+    },
+    setsellect:(state)=>{
+      state.selectedMusic.toPlayList=!state.selectedMusic.toPlayList
     },
   },
 });
@@ -2898,7 +2900,7 @@ export const {
   selectPlayList,
   sellectMusic,
   add_toPlayList,
+  setsellect,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
- 

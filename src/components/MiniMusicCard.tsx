@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { Link } from "react-router";
-import { addPlayer } from "../redux/Slice";
+import { addPlayer, sellectMusic } from "../redux/Slice";
 
 function MiniMusicCard({ data }: { data: any }) {
-  const [visible,setVisible]= useState<boolean>(false)
-  const sellectedMusic=useSelector((state:RootState)=>state.music.selectedMusic)
-  const disPatch=useDispatch()
-  useEffect(()=>{
-     
-  },[sellectedMusic])
+  const [visible, setVisible] = useState<boolean>(false);
+  const sellectedMusic = useSelector(
+    (state: RootState) => state.music.selectedMusic
+  );
+  const disPatch = useDispatch();
+  useEffect(() => {}, [sellectedMusic]);
 
   return (
     <div className="w-[280px] lg:w-[340px] flex flex-row items-center group relative m-[10px] ">
@@ -27,9 +27,21 @@ function MiniMusicCard({ data }: { data: any }) {
         alt=""
       />
       <div className="bg-stone-950 absolute left-0 hidden lg:flex  w-[48px] h-[48px] opacity-[0] group-hover:opacity-[0.7]"></div>
-      <Link onClick={()=>{
-        disPatch(addPlayer({name:data.data.name ,artist:data.data.artists.items[0].profile.name,img:data.data.albumOfTrack.coverArt.sources[2].url}))
-      }} to={'/player'}> <FaPlay className="absolute left-[15px] top-[15px] text-[20px] opacity-[0] group-hover:opacity-[1]" /></Link>
+      <Link
+        onClick={() => {
+          disPatch(
+            addPlayer({
+              name: data.data.name,
+              artist: data.data.artists.items[0].profile.name,
+              img: data.data.albumOfTrack.coverArt.sources[2].url,
+            })
+          );
+        }}
+        to={"/player"}
+      >
+        {" "}
+        <FaPlay className="absolute left-[15px] top-[15px] text-[20px] opacity-[0] group-hover:opacity-[1]" />
+      </Link>
       <div className="ml-[10px]">
         <p className="whitespace-nowrap overflow-hidden text-ellipsis w-[240px] text-[14px] lg:text-[16px] lg:w-[270px] px-[2px] group-hover:w-[200px]">
           {data.data.name}
@@ -40,11 +52,21 @@ function MiniMusicCard({ data }: { data: any }) {
               " , " +
               data.data.artists.items[1]?.profile.name}
           </p>
-          <p  className="w-[110px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[90px] ">
+          <p className="w-[110px] whitespace-nowrap overflow-hidden text-ellipsis group-hover:w-[90px] ">
             16mln izlenme
           </p>
-          <SlOptionsVertical onClick={()=>setVisible(!visible)} className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  " />
-          <Option visible={visible} data={{name:data.data.name,img:data.data.albumOfTrack.coverArt.sources[1].url}}/>
+          <SlOptionsVertical
+            onClick={() => {setVisible(!visible);
+               disPatch(sellectMusic({
+              name: data.data.name,
+              img: data.data.albumOfTrack.coverArt.sources[1].url,
+            }))}}
+            className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  "
+          />
+          <Option
+            visible={visible}
+           
+          />
         </div>
       </div>
     </div>

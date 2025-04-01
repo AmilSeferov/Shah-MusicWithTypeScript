@@ -3,7 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import MenuListElement from "./MenuListElement";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { sellectMusic } from "../redux/Slice";
+import { sellectMusic, setsellect } from "../redux/Slice";
 function MusicAdd__PlayList() {
   const disPatch = useDispatch();
   const playLists = useSelector((state: RootState) => state.music.playLists);
@@ -13,7 +13,7 @@ function MusicAdd__PlayList() {
   return (
     <div
       className={
-        (sellectedMusic ? "flex flex-col" : "hidden") +
+        (sellectedMusic.toPlayList ? "flex flex-col" : "hidden") +
         " h-[440px] w-[360px] md:h-[540px] bg-stone-800 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl "
       }
     >
@@ -21,7 +21,7 @@ function MusicAdd__PlayList() {
         <p className="py-[10px] font-bold text-[22px]">Oynatma listesini sec</p>{" "}
         <IoMdClose
           onClick={() => {
-            disPatch(sellectMusic(null));
+            disPatch(setsellect());
           }}
           className="text-[25px]"
         />
