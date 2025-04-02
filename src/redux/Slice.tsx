@@ -2808,6 +2808,7 @@ const playLists: playListType[] =JSON.parse(localStorage.musicLists)
 //     musics: [],
 //   };
 // });
+
 const initialState: stateType = {
   isLoading: false,
   error: false,
@@ -2839,6 +2840,7 @@ export const counterSlice = createSlice({
       }
     ) => {
       state.playLists = [...state.playLists, actions.payload];
+      localStorage.setItem('musicLists',JSON.stringify(state.playLists))
     },
     addPlayer: (
       state,
@@ -2866,6 +2868,7 @@ export const counterSlice = createSlice({
       }
     ) => {
       state.playList = actions.payload;
+     
     },
     sellectMusic: (
       state,
@@ -2877,10 +2880,10 @@ export const counterSlice = createSlice({
       state.selectedMusic.music = actions.payload;
     },
     add_toPlayList: (state, actions) => {
+      console.log('clcl')
       state.playLists.filter((item) => {
         if (
-          item.name === actions.payload.name &&
-          item.img === actions.payload.img
+          item.name === actions.payload.name
         )
           state.selectedMusic.music !== null && item.musics.push(state.selectedMusic.music);
           localStorage.setItem('musicLists',JSON.stringify(state.playLists))

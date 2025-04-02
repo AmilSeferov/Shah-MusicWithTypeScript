@@ -155,7 +155,7 @@ function PlayListForm() {
         </button>
         <button
           onClick={() => {
-            dispatch(addPlayList({ name: value, img: "" }));
+            dispatch(addPlayList({ name: value, img: "",musics:[] }));
             dispatch(setAddList());
           }}
           className="bg-stone-400 w-[100px] h-[30px] rounded-[20px] ml-[20px]"
