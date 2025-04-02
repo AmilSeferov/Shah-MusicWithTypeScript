@@ -2800,13 +2800,14 @@ const data = {
   },
 };
 
-const playLists: playListType[] = data.playlists.items.map((item: any) => {
-  return {
-    name: item.data.name,
-    img: item.data.images.items[0].sources[0].url,
-    musics: [],
-  };
-});
+const playLists: playListType[] =JSON.parse(localStorage.musicLists)
+// data.playlists.items.map((item: any) => {
+//   return {
+//     name: item.data.name,
+//     img: item.data.images.items[0].sources[0].url,
+//     musics: [],
+//   };
+// });
 const initialState: stateType = {
   isLoading: false,
   error: false,
@@ -2882,6 +2883,7 @@ export const counterSlice = createSlice({
           item.img === actions.payload.img
         )
           state.selectedMusic.music !== null && item.musics.push(state.selectedMusic.music);
+          localStorage.setItem('musicLists',JSON.stringify(state.playLists))
       });
     },
     setsellect:(state)=>{

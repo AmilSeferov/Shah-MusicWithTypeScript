@@ -16,7 +16,6 @@ import MusicAdd__PlayList from "./components/MusicAdd__PlayList";
 function App() {
   const player = useSelector((state: RootState) => state.music.player);
 
-  useEffect(() => {}, []);
   return (
     <div onClick={()=>{console.log()}} className="min-h-[100vh] bg-stone-950">
       <Header />
