@@ -1,19 +1,15 @@
 import { FaCirclePlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
-import { addPlayer, sellectMusic } from "../redux/Slice";
+import { addPlayer, selectPlayList, sellectMusic } from "../redux/Slice";
 import Option from "./Option";
 import { useEffect, useState } from "react";
 import { RootState } from "../redux/store";
 function PlayListCard({ data }: { data: any }) {
   const disPatch = useDispatch();
- 
-  return (
-    <div
-     
-      className="w-fit relative mr-[10px] mb-[10px] md:mr-[10px] lg:mr-[10px]"
-    >
 
+  return (
+    <div className="w-fit relative mr-[10px] mb-[10px] md:mr-[10px] lg:mr-[10px]">
       <div className="group relative w-[150px] sm:w-[170px] md:w-[175px] lg:w-[170px] xl:w-[170px]">
         <img
           className="h-[150px] sm:h-[170px] md:h-[175px] lg:h-[170px] xl:w-[170px]  rounded-[5px] "
@@ -21,8 +17,10 @@ function PlayListCard({ data }: { data: any }) {
           alt=""
         />
         <Link
-          
-          to={"/PlayListPage"}
+          to={"/playList"}
+          onClick={() => {
+            disPatch(selectPlayList(data));
+          }}
         >
           {" "}
           <FaCirclePlay className=" absolute bottom-[10px] right-[10px] text-[25px] opacity-[0] group-hover:opacity-[1]" />
@@ -37,7 +35,7 @@ function PlayListCard({ data }: { data: any }) {
             Single
           </p>
           <p className=" whitespace-nowrap overflow-hidden text-ellipsis w-[95px] sm:w-[105px] md:w-[108px] lg:w-[120px] xl:w-[130px] ">
-            {data.artist?data.artist:'Amil Seferov'}
+            {data.artist ? data.artist : "Amil Seferov"}
           </p>
         </div>
       </div>
