@@ -1,7 +1,10 @@
+import MusicCard from "../components/MusicCard"
 
 function BookCase() {
   return (
-    <div></div>
+    <div>
+        <MusicCard/>
+    </div>
   )
 }
 

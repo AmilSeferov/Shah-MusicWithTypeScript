@@ -32,7 +32,7 @@ function MusicList({ data }: { data: any }) {
       >
         {data?.[0] === "albums" &&
           data[1].items.map((item: any, index: number) => (
-            <MusicCard key={index} data={item} />
+            <MusicCard key={index} data={{name:item.data.name,img:item.data.coverArt.sources[0].url,artist: item.data.artists.items[0].profile.name}} />
           ))}
 
         {data?.[0] === "artists" &&
