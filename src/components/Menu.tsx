@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import { GoHomeFill } from "react-icons/go";
 import { TbArrowRoundaboutLeft } from "react-icons/tb";
 import { RiCompassDiscoverFill } from "react-icons/ri";
+import { MdLibraryMusic } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { FiPlus } from "react-icons/fi";
@@ -87,6 +88,18 @@ function Menu() {
           >
             <RiCompassDiscoverFill className="text-[20px] mx-[10px]" />
             {"Discover"}
+          </Link>
+          <Link
+            className={
+              (!menu && "flex-col text-[10px]  ") +
+              (locations === "/BookCase" ? " bg-stone-600 " : "") +
+              " flex items-center h-fit w-100% rounded-[10px] px-[3px] py-[8px]  hover:bg-stone-700 my-[5px]"
+            }
+            to={"/BookCase"}
+          >
+            {" "}
+            <MdLibraryMusic className="text-[20px] mx-[10px]" />
+            {"BookCase"}
           </Link>
           <Link
             className={
