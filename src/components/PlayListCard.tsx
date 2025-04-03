@@ -37,7 +37,7 @@ function PlayListCard({ data }: { data: any }) {
             Single
           </p>
           <p className=" whitespace-nowrap overflow-hidden text-ellipsis w-[95px] sm:w-[105px] md:w-[108px] lg:w-[120px] xl:w-[130px] ">
-            {data.artist}
+            {data.artist?data.artist:'Amil Seferov'}
           </p>
         </div>
       </div>
