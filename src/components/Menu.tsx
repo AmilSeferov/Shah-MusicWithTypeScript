@@ -26,7 +26,7 @@ function Menu() {
       <div
         className={
           menu
-            ? "sm:w-[70px] md:w-[200px] "
+            ? "sm:w-[70px] md:w-[220px] "
             : "hidden sm:flex w-[75px] h-[calc(100%-80px)]  z-0"
           //+ (player ? " h-[calc(100%-830px)]" : "")
         }
