@@ -2800,7 +2800,7 @@ const data = {
   },
 };
 
-const playLists: playListType[] =JSON.parse(localStorage.musicLists)
+const playLists: playListType[] =
 // data.playlists.items.map((item: any) => {
 //   return {
 //     name: item.data.name,
@@ -2808,7 +2808,7 @@ const playLists: playListType[] =JSON.parse(localStorage.musicLists)
 //     musics: [],
 //   };
 // });
-
+JSON.parse(localStorage.musicLists)
 const initialState: stateType = {
   isLoading: false,
   error: false,

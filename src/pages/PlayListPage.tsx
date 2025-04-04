@@ -52,7 +52,7 @@ function PlayListPage() {
                 data={{
                   name: item.data.name,
                   img: item.data.albumOfTrack.coverArt.sources[0].url,
-                  artists: item.data.artists.items[0].profile.name 
+                  artist: item.data.artists.items[0].profile.name 
                 }}
               />
             );

@@ -63,6 +63,7 @@ function MiniMusicCard({ data }: { data: any }) {
                disPatch(sellectMusic({
               name: data.data.name,
               img: data.data.albumOfTrack.coverArt.sources[1].url,
+              artist: data.data.artists.items[0].profile.name
             }))}}
             className="opacity-[0] absolute right-[10px] top-[16px] text-[18px] group-hover:opacity-[1]  "
           />

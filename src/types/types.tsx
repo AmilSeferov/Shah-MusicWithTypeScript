@@ -20,7 +20,7 @@ export interface playListType {
 export interface musicType {
   name: string;
   img: string;
-  artists:string
+  artist:string
 }
 export interface profileType {
   name: string;
