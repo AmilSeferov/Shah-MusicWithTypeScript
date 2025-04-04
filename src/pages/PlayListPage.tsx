@@ -38,6 +38,8 @@ function PlayListPage() {
           {data.musics?.map((item, index) => (
             <PlayListELement key={index} data={item} />
           ))}
+          <p className="w-[90%]  text-[28px] font-bold">Öneriler</p>
+          
         </div>
       </div>
     </div>

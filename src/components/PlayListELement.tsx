@@ -4,7 +4,7 @@ import { musicType } from "../types/types";
 
 function PlayListELement({ data }: { data: musicType }) {
   return (
-    <div className="w-[90%] box-content flex flex-row items-center group relative my-[10px]  ">
+    <div className="w-[90%] box-content flex flex-row items-center group relative my-[20px] ">
       <img
         className="w-[24px] h-[24px] lg:w-[48px] lg:h-[48px]"
         src={data.img}

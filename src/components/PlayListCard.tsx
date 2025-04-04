@@ -9,10 +9,10 @@ function PlayListCard({ data }: { data: any }) {
   const disPatch = useDispatch();
 
   return (
-    <div className="w-fit relative mr-[10px] mb-[10px] md:mr-[10px] lg:mr-[10px]">
-      <div className="group relative w-[150px] sm:w-[170px] md:w-[175px] lg:w-[170px] xl:w-[170px]">
+    <div className="w-fit relative mr-[10px] mb-[50px] md:mr-[10px] lg:mr-[10px]">
+      <div className="group relative w-[150px] sm:w-[170px] md:w-[175px] lg:w-[180px] xl:w-[180px]">
         <img
-          className="h-[150px] sm:h-[170px] md:h-[175px] lg:h-[170px] xl:w-[170px]  rounded-[5px] "
+          className="h-[150px] sm:h-[170px] md:h-[175px] lg:h-[180px] xl:w-[175px]  rounded-[5px] "
           src={data.img}
           alt=""
         />
