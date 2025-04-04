@@ -18,7 +18,7 @@ function PlayListELement({ data }: { data: musicType }) {
             {data.name}
           </p>
           <p className="mr-[15px] text-[10px] sm:text-[12px] lg:text-[13px]  whitespace-nowrap overflow-hidden text-ellipsis  ">
-            Ibrahim Tatlises
+            {data.artists}
           </p>
         </div>
         <div className="flex w-[10%] flex-row whitespace-nowrap overflow-hidden text-ellipsis ">

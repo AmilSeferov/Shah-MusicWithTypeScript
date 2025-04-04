@@ -44,13 +44,15 @@ function PlayListPage() {
             <PlayListELement key={index} data={item} />
           ))}
           <p className="w-[90%]  text-[28px] font-bold">Öneriler</p>
-          {dataAdditional.map((item, index) => {
+          {dataAdditional.map((item:any, index:number) => {
+            console.log(item.data.artists.items[0].profile.name + " "+ item.data.artists.items[1]?.profile.name)
             return (
               <PlayListELement
                 key={index}
                 data={{
                   name: item.data.name,
                   img: item.data.albumOfTrack.coverArt.sources[0].url,
+                  artists: item.data.artists.items[0].profile.name 
                 }}
               />
             );
