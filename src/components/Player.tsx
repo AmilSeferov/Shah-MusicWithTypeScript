@@ -20,7 +20,7 @@ import { BiSolidDislike } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import './../../public/audio.mp3'
+import'/public/audio.mp3'
 function Player() {
   const audioRef=useRef(null)
   const [value, setValue] = useState<number[]>([0, 0, 0]);
@@ -42,7 +42,7 @@ if(!play){
     <>
       <div className="w-[100%] h-[52px] md:h-[58px] lg:h-[62px] ">
       <audio ref={audioRef} >
-        <source  src="/public/audio.mp3" type="audio/mpeg" /></audio></div>
+        <source  src="audio.mp3" type="" /></audio></div>
       <div className="flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
         <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
           <IoPlaySkipBackSharp className="hidden sm:flex" />
