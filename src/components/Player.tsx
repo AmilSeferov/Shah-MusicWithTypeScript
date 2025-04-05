@@ -28,12 +28,18 @@ function Player() {
   const [like, setLike] = useState([true, true]);
   const [play,setPlay]=useState<boolean>(false);
   const [duration,setDuration]=useState<number>(0)
+  const [currentTime,setCurrentTime]=useState<number>(0)
   const tagRef = useRef(null);
   const data = useSelector((state: RootState) => state.music.player);
 useEffect(()=>{
-  setDuration(audioRef.current?.duration)
+  // setDuration(audioRef.current?.duration)
+  setInterval(()=>{
+    setDuration(audioRef.current?.duration)
+    setCurrentTime(audioRef.current?.currentTime)
+  },1000)
 },[])
-console.log((duration % 60))
+
+
   const audioPlay=()=>{
     setPlay(!play)
 if(!play){
@@ -43,6 +49,7 @@ if(!play){
 }
     
   }
+  
   return (
     <>
     
@@ -58,7 +65,7 @@ if(!play){
           <IoIosPlay onClick={audioPlay} className={(play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
           <FaPause onClick={audioPlay} className={(!play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
           <IoPlaySkipForward className="" />
-          <p className="hidden lg:flex text-[16px] px-[10px]">1:10/{Math.floor(duration / 60)}:{Math.floor(duration % 60)}</p>
+          <p className="hidden lg:flex text-[16px] px-[10px]">{Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60) < 10?'0'+ Math.floor(currentTime % 60):Math.floor(currentTime % 60) }/{Math.floor(duration / 60)}:{Math.floor(duration % 60)}</p>
         </div>
         <div className="flex items-center  text-stone-300">
           <img
