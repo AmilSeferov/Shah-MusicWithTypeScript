@@ -40,10 +40,14 @@ if(!play){
   }
   return (
     <>
+    
       <div className="w-[100%] h-[52px] md:h-[58px] lg:h-[62px] ">
       <audio ref={audioRef} >
         <source  src="audio.mp3" type="" /></audio></div>
-      <div className="flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
+        
+      <div className="  flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
+        <div className="absolute top-0 left-0 w-[50%] h-[2px] bg-red-500" ></div>
+        <div className="absolute top-0 right-0 w-[50%] h-[2px] bg-stone-500 " ></div>
         <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
           <IoPlaySkipBackSharp className="hidden sm:flex" />
           <IoIosPlay onClick={audioPlay} className={(play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
