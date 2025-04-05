@@ -9,6 +9,7 @@ import { IoVolumeMediumOutline } from "react-icons/io5";
 import { IoVolumeHighOutline } from "react-icons/io5";
 import { IoVolumeMuteOutline } from "react-icons/io5";
 import { BsVolumeMute } from "react-icons/bs";
+import { FaPause } from "react-icons/fa6";
 import { LuRepeat } from "react-icons/lu";
 import { LuRepeat1 } from "react-icons/lu";
 import { IoShuffle } from "react-icons/io5";
@@ -19,20 +20,34 @@ import { BiSolidDislike } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-
+import './../../public/audio.mp3'
 function Player() {
+  const audioRef=useRef(null)
   const [value, setValue] = useState<number[]>([0, 0, 0]);
   const [kord, setKord] = useState<number>(100);
   const [like, setLike] = useState([true, true]);
+  const [play,setPlay]=useState<boolean>(false)
   const tagRef = useRef(null);
   const data = useSelector((state: RootState) => state.music.player);
+  const audioPlay=()=>{
+    setPlay(!play)
+if(!play){
+  audioRef.current?.play()
+}else{
+  audioRef.current?.pause()
+}
+    
+  }
   return (
     <>
-      <div className="w-[100%] h-[52px] md:h-[58px] lg:h-[62px] "></div>
+      <div className="w-[100%] h-[52px] md:h-[58px] lg:h-[62px] ">
+      <audio ref={audioRef} >
+        <source  src="/public/audio.mp3" type="audio/mpeg" /></audio></div>
       <div className="flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
         <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
           <IoPlaySkipBackSharp className="hidden sm:flex" />
-          <IoIosPlay className="text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]" />
+          <IoIosPlay onClick={audioPlay} className={(play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
+          <FaPause onClick={audioPlay} className={(!play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
           <IoPlaySkipForward className="" />
           <p className="hidden lg:flex text-[16px] px-[10px]">1:10/2:11</p>
         </div>
