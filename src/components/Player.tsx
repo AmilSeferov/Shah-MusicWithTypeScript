@@ -49,7 +49,7 @@ if(!play){
 }
     
   }
-  
+  console.log((`w-[${Math.floor(((currentTime)/duration)*100) + '%'}] `))
   return (
     <>
     
@@ -58,8 +58,8 @@ if(!play){
         <source  src="audio.mp3" type="" /></audio></div>
         
       <div className="  flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
-        <div className="absolute top-0 left-0 w-[50%] h-[2px] bg-red-500" ></div>
-        <div className="absolute top-0 right-0 w-[50%] h-[2px] bg-stone-500 " ></div>
+        <div style={{width:`${Math.floor(((currentTime)/duration)*100) + '%'}`}} className={ "  absolute top-0 left-0  h-[2px] bg-red-500"} ></div>
+        <div style={{width:`${Math.ceil(((duration-currentTime)/duration)*100) + '%'}`}} className="absolute top-0 right-0  h-[2px] bg-stone-500 " ></div>
         <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
           <IoPlaySkipBackSharp className="hidden sm:flex" />
           <IoIosPlay onClick={audioPlay} className={(play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
