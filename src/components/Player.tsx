@@ -20,52 +20,95 @@ import { BiSolidDislike } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import'/public/audio.mp3'
+import "/public/audio.mp3";
 function Player() {
-  const audioRef=useRef(null)
+  const audioRef = useRef(null);
   const [value, setValue] = useState<number[]>([0, 0, 0]);
   const [kord, setKord] = useState<number>(100);
   const [like, setLike] = useState([true, true]);
-  const [play,setPlay]=useState<boolean>(false);
-  const [duration,setDuration]=useState<number>(0)
-  const [currentTime,setCurrentTime]=useState<number>(0)
+  const [play, setPlay] = useState<boolean>(false);
+  const [duration, setDuration] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<number>(0);
   const tagRef = useRef(null);
+  const  arrowRef=useRef(null)
   const data = useSelector((state: RootState) => state.music.player);
-useEffect(()=>{
-  // setDuration(audioRef.current?.duration)
-  setInterval(()=>{
-    setDuration(audioRef.current?.duration)
-    setCurrentTime(audioRef.current?.currentTime)
-  },1000)
-},[])
+  useEffect(() => {
+    // setDuration(audioRef.current?.duration)
+    setInterval(() => {
+      setDuration(audioRef.current?.duration);
+      setCurrentTime(audioRef.current?.currentTime);
+    }, 1000);
+  }, []);
 
-
-  const audioPlay=()=>{
-    setPlay(!play)
-if(!play){
-  audioRef.current?.play()
-}else{
-  audioRef.current?.pause()
-}
-    
-  }
-  console.log((`w-[${Math.floor(((currentTime)/duration)*100) + '%'}] `))
+  const audioPlay = () => {
+    setPlay(!play);
+    if (!play) {
+      audioRef.current?.play();
+    } else {
+      audioRef.current?.pause();
+    }
+  };
   return (
     <>
-    
       <div className="w-[100%] h-[52px] md:h-[58px] lg:h-[62px] ">
-      <audio ref={audioRef} >
-        <source  src="audio.mp3" type="" /></audio></div>
-        
+        <audio ref={audioRef}>
+          <source src="audio.mp3" type="" />
+        </audio>
+      </div>
+
       <div className="  flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
-        <div style={{width:`${Math.floor(((currentTime)/duration)*100) + '%'}`}} className={ "  absolute top-0 left-0  h-[2px] bg-red-500"} ></div>
-        <div style={{width:`${Math.ceil(((duration-currentTime)/duration)*100) + '%'}`}} className="absolute top-0 right-0  h-[2px] bg-stone-500 " ></div>
+        <div ref={arrowRef} onClick={(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
+          //  console.log(e.clientX)
+          //  console.log(arrowRef.current?.getBoundingClientRect().width)
+           if(arrowRef.current){
+           const value=duration*((Math.round((e.clientX / arrowRef.current.getBoundingClientRect().width)*10000))/100)
+           audioRef.current.currentTime= value/100
+           }
+        }} className="absolute top-0 left-0 h-[3px] w-[100%] z-10 hover:cursor-pointer">
+          {" "}
+          <div
+            style={{
+              width: `${
+                Math.floor((currentTime / duration) * 100000) / 1000 + "%"
+              }`,
+            }}
+            className={"absolute top-0 left-0 h-[2px] bg-red-500"}
+          ></div>
+          <div
+            style={{
+              width: `${
+                Math.ceil(((duration - currentTime) / duration) * 100000) /
+                  1000 +
+                "%"
+              }`,
+            }}
+            className=" absolute top-0 right-0 h-[2px] bg-stone-500 "
+          ></div>
+        </div>
         <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
           <IoPlaySkipBackSharp className="hidden sm:flex" />
-          <IoIosPlay onClick={audioPlay} className={(play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
-          <FaPause onClick={audioPlay} className={(!play?'hidden ':'') + " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"} />
+          <IoIosPlay
+            onClick={audioPlay}
+            className={
+              (play ? "hidden " : "") +
+              " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"
+            }
+          />
+          <FaPause
+            onClick={audioPlay}
+            className={
+              (!play ? "hidden " : "") +
+              " text-[28px] sm:text-[31px] lg:text-[34px] mx-[10px]"
+            }
+          />
           <IoPlaySkipForward className="" />
-          <p className="hidden lg:flex text-[16px] px-[10px]">{Math.floor(currentTime / 60)}:{Math.floor(currentTime % 60) < 10?'0'+ Math.floor(currentTime % 60):Math.floor(currentTime % 60) }/{Math.floor(duration / 60)}:{Math.floor(duration % 60)}</p>
+          <p className="hidden lg:flex text-[16px] px-[10px]">
+            {Math.floor(currentTime / 60)}:
+            {Math.floor(currentTime % 60) < 10
+              ? "0" + Math.floor(currentTime % 60)
+              : Math.floor(currentTime % 60)}
+            /{Math.floor(duration / 60)}:{Math.floor(duration % 60)}
+          </p>
         </div>
         <div className="flex items-center  text-stone-300">
           <img

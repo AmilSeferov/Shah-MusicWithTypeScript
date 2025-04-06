@@ -43,7 +43,7 @@ function Menu() {
       >
         {menu && (
           <div
-            className="flex items-center text-[20px] z-10 "
+            className="flex items-center text-[20px] z-9 "
             onClick={() => {
               dispatch(setmenu());
             }}
