@@ -30,7 +30,7 @@ function Player() {
   const [duration, setDuration] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const tagRef = useRef(null);
-  const  arrowRef=useRef(null)
+  const arrowRef = useRef(null);
   const data = useSelector((state: RootState) => state.music.player);
   useEffect(() => {
     // setDuration(audioRef.current?.duration)
@@ -57,32 +57,45 @@ function Player() {
       </div>
 
       <div className="  flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
-        <div ref={arrowRef} onClick={(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
-          //  console.log(e.clientX)
-          //  console.log(arrowRef.current?.getBoundingClientRect().width)
-           if(arrowRef.current){
-           const value=duration*((Math.round((e.clientX / arrowRef.current.getBoundingClientRect().width)*10000))/100)
-           audioRef.current.currentTime= value/100
-           }
-        }} className="absolute top-0 left-0 h-[3px] w-[100%] z-10 hover:cursor-pointer">
+        <div
+          ref={arrowRef}
+          onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            if (arrowRef.current&&audioRef.current) {
+              const value =
+                duration *
+                (Math.round(
+                  (e.clientX / arrowRef.current.getBoundingClientRect().width) *
+                    10000
+                ) /
+                  100);
+              audioRef.current.currentTime = value / 100;
+            }
+          }}
+          className="absolute top-[-2px] left-0 h-[6px] w-[100%] z-10 hover:cursor-pointer"
+        >
           {" "}
           <div
             style={{
               width: `${
-                Math.floor((currentTime / duration) * 100000) / 1000 + "%"
+                Math.round((currentTime / duration) * 100000) / 1000 + "%"
               }`,
             }}
-            className={"absolute top-0 left-0 h-[2px] bg-red-500"}
+            className={"absolute top-[2px] left-0 h-[2px] bg-red-500"}
           ></div>
+          <div  style={{
+              left:  `${
+                Math.round((currentTime / duration) * 100000) / 1000 + "%"
+              }`,
+            }} className="absolute top-0   h-[6px] w-[6px] rounded-full bg-red-500 z-1"></div>
           <div
             style={{
               width: `${
-                Math.ceil(((duration - currentTime) / duration) * 100000) /
+                Math.round(((duration - currentTime) / duration) * 100000) /
                   1000 +
                 "%"
               }`,
             }}
-            className=" absolute top-0 right-0 h-[2px] bg-stone-500 "
+            className=" absolute top-[2px] right-0 h-[2px] bg-stone-500 "
           ></div>
         </div>
         <div className="flex items-center text-[20px] sm:text-[22px] lg:w-[320px] lg:text-[24px]">
