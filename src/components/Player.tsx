@@ -32,6 +32,7 @@ function Player() {
   const tagRef = useRef(null);
   const arrowRef = useRef(null);
   const data = useSelector((state: RootState) => state.music.player);
+  const [draging, setDraging] = useState(false);
   useEffect(() => {
     // setDuration(audioRef.current?.duration)
     setInterval(() => {
@@ -56,11 +57,31 @@ function Player() {
         </audio>
       </div>
 
-      <div className="  flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200">
+      <div
+       onMouseDown={() => {
+        setDraging(true);
+      }}
+      onMouseUp={() => {
+        setDraging(false);
+      }}
+        onMouseMove={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+         if (arrowRef.current && audioRef.current && draging) {
+            const value =
+              duration *
+              (Math.round(
+                (e.clientX / arrowRef.current.getBoundingClientRect().width) *
+                  10000
+              ) /
+                100);
+            audioRef.current.currentTime = value / 100;
+          }
+        }}
+        className="  flex flex-row-reverse sm:flex-row justify-between  w-[100%] fixed bottom-[0] py-[8px] lg:py-[10px] bg-stone-800 px-[10px] text-stone-200"
+      >
         <div
           ref={arrowRef}
           onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-            if (arrowRef.current&&audioRef.current) {
+            if (arrowRef.current && audioRef.current) {
               const value =
                 duration *
                 (Math.round(
@@ -82,11 +103,15 @@ function Player() {
             }}
             className={"absolute top-[2px] left-0 h-[2px] bg-red-500"}
           ></div>
-          <div  style={{
-              left:  `${
+          <div
+           
+            style={{
+              left: `${
                 Math.round((currentTime / duration) * 100000) / 1000 + "%"
               }`,
-            }} className="absolute top-0   h-[6px] w-[6px] rounded-full bg-red-500 z-1"></div>
+            }}
+            className="absolute top-0   h-[6px] w-[6px] rounded-full bg-red-500 z-1"
+          ></div>
           <div
             style={{
               width: `${
