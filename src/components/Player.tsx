@@ -33,12 +33,18 @@ function Player() {
   const arrowRef = useRef(null);
   const data = useSelector((state: RootState) => state.music.player);
   const [draging, setDraging] = useState(false);
+  
+
   useEffect(() => {
     // setDuration(audioRef.current?.duration)
     setInterval(() => {
       setDuration(audioRef.current?.duration);
       setCurrentTime(audioRef.current?.currentTime);
     }, 1000);
+
+    setPlay(true);
+    if (!play) {
+      audioRef.current?.play();}
   }, []);
 
   const audioPlay = () => {
