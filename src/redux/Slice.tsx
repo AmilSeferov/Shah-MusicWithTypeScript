@@ -2815,7 +2815,7 @@ const initialState: stateType = {
   data: data,
   menu: true,
   addPlayList: false,
-  player: null,
+  player:JSON.parse(localStorage.getItem('player') ),
   playLists: playLists,
   profile: { name: "", img: "" },
   playList: { name: "", img: "", musics: [] },
@@ -2849,6 +2849,7 @@ export const counterSlice = createSlice({
         type: string;
       }
     ) => {
+      localStorage.setItem('player',JSON.stringify(actions.payload))
       state.player = actions.payload;
     },
     addProfile: (
