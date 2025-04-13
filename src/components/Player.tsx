@@ -21,6 +21,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import "/public/audio.mp3";
+import { Link } from "react-router";
 function Player() {
   const audioRef = useRef(null);
   const [value, setValue] = useState<number[]>([0, 0, 0]);
@@ -267,12 +268,12 @@ function Player() {
             />
           )}
           {value[2] === 0 && (
-            <MdExpandMore
-              onClick={() => {
-                setValue([value[0], value[1], 1]);
-              }}
-              className="mx-[10px]"
-            />
+            <Link to={'/player'}><MdExpandMore 
+            onClick={() => {
+              setValue([value[0], value[1], 1]);
+            }}
+            className="mx-[10px]"
+          /></Link>
           )}
           {value[2] === 1 && (
             <MdExpandLess
