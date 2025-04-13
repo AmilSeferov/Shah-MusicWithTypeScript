@@ -21,7 +21,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import "/public/audio.mp3";
-import { Link } from "react-router";
+import { Link, Location, useLocation } from "react-router";
 function Player() {
   const audioRef = useRef(null);
   const [value, setValue] = useState<number[]>([0, 0, 0]);
@@ -34,8 +34,8 @@ function Player() {
   const arrowRef = useRef(null);
   const data = useSelector((state: RootState) => state.music.player);
   const [draging, setDraging] = useState(false);
-  
-
+  const [prevLocations,setPrevLocations]=useState<(null|string)>(null)
+const locations: Location<any>=useLocation()
   useEffect(() => {
     // setDuration(audioRef.current?.duration)
     setInterval(() => {
@@ -268,7 +268,9 @@ function Player() {
             />
           )}
           {value[2] === 0 && (
-            <Link to={'/player'}><MdExpandMore 
+            <Link onClick={()=>{
+setPrevLocations(locations.pathname)
+            }} to={'/player'}><MdExpandMore 
             onClick={() => {
               setValue([value[0], value[1], 1]);
             }}
@@ -276,12 +278,15 @@ function Player() {
           /></Link>
           )}
           {value[2] === 1 && (
-            <MdExpandLess
+           <Link to={prevLocations} onClick={()=>{
+            console.log(prevLocations)
+           }}> <MdExpandLess
               onClick={() => {
                 setValue([value[0], value[1], 0]);
               }}
               className="mx-[10px]"
             />
+            </Link>
           )}
         </div>
       </div>
